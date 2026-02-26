@@ -1,0 +1,67 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
+import { REALISATIONS } from '@/lib/constants'
+import { BeforeAfterSlider } from '@/components/ui/before-after-slider'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { useScrollAnimation } from '@/hooks/use-scroll-animation'
+
+export function RealisationsPreview() {
+  const { ref, isVisible } = useScrollAnimation(0.1)
+
+  return (
+    <section className="bg-slate-50 py-20" ref={ref}>
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mb-14 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-slate-800 md:text-4xl">
+            Nos <span className="text-electric">Réalisations</span>
+          </h2>
+          <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
+          <p className="mx-auto max-w-2xl text-slate-600">
+            Découvrez nos projets avant/après et la qualité de nos interventions.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2">
+          {REALISATIONS.slice(0, 4).map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: index * 0.15, duration: 0.5 }}
+            >
+              <BeforeAfterSlider
+                beforeImage={project.beforeImage}
+                afterImage={project.afterImage}
+              />
+              <div className="mt-4">
+                <h3 className="mb-2 text-lg font-semibold text-slate-800">
+                  {project.title}
+                </h3>
+                <p className="mb-3 text-sm text-slate-600">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <Badge key={tag} variant="electric">{tag}</Badge>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button
+            href="/realisations"
+            variant="outline"
+            size="lg"
+            iconRight={<ArrowRight className="h-5 w-5" />}
+          >
+            Voir toutes nos réalisations
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}

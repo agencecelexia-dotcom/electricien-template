@@ -1,0 +1,76 @@
+'use client'
+
+import { useActionState } from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { contactFormSchema, type ContactFormData } from '@/lib/validations'
+import { submitContactForm } from '@/lib/actions'
+import { Input, Textarea } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { Send, CheckCircle } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+
+export function ContactForm() {
+  const [state, formAction, isPending] = useActionState(submitContactForm, null)
+  const {
+    register,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+  })
+
+  if (state?.success) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center"
+      >
+        <CheckCircle className="mx-auto mb-4 h-12 w-12 text-green-500" />
+        <h3 className="mb-2 text-xl font-semibold text-green-800">Message envoyé !</h3>
+        <p className="text-green-600">{state.message}</p>
+      </motion.div>
+    )
+  }
+
+  return (
+    <form action={formAction} className="space-y-5">
+      <div className="grid gap-5 md:grid-cols-2">
+        <Input
+          label="Nom complet"
+          id="name"
+          placeholder="Jean Dupont"
+          error={errors.name?.message || (state && !state.success ? state.errors?.name?.[0] : undefined)}
+          {...register('name')}
+        />
+        <Input
+          label="Email"
+          id="email"
+          type="email"
+          placeholder="jean@exemple.fr"
+          error={errors.email?.message || (state && !state.success ? state.errors?.email?.[0] : undefined)}
+          {...register('email')}
+        />
+      </div>
+      <Input
+        label="Téléphone"
+        id="phone"
+        type="tel"
+        placeholder="01 23 45 67 89"
+        error={errors.phone?.message || (state && !state.success ? state.errors?.phone?.[0] : undefined)}
+        {...register('phone')}
+      />
+      <Textarea
+        label="Votre message"
+        id="message"
+        rows={5}
+        placeholder="Décrivez votre besoin..."
+        error={errors.message?.message || (state && !state.success ? state.errors?.message?.[0] : undefined)}
+        {...register('message')}
+      />
+      <Button type="submit" loading={isPending} size="lg" className="w-full" icon={<Send className="h-5 w-5" />}>
+        Envoyer le message
+      </Button>
+    </form>
+  )
+}
