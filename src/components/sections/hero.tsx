@@ -1,11 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Phone, ChevronDown, ShieldCheck } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { COMPANY } from '@/lib/constants'
-import { HeroParticles } from './hero-particles'
+import { HeroCircuit } from './hero-particles'
 import Image from 'next/image'
 
 export function Hero() {
@@ -18,127 +17,96 @@ export function Hero() {
           alt=""
           fill
           priority
-          className="object-cover opacity-30"
+          className="object-cover opacity-20"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/40" />
       </div>
 
-      {/* Particle Effect */}
-      <div className="absolute inset-0 z-[1]">
-        <HeroParticles className="absolute inset-0" />
-      </div>
-
-      {/* Grid Pattern Overlay */}
-      <div
-        className="absolute inset-0 z-[2] opacity-[0.03]"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(59,130,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.3) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <Badge variant="amber" className="mb-6">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            Électricien Certifié Qualifelec
-          </Badge>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
-        >
-          L&apos;Excellence{' '}
-          <span className="text-electric" style={{ textShadow: '0 0 40px rgba(59,130,246,0.4)' }}>
-            Électrique
-          </span>
-          <br />
-          à Votre Service
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mx-auto mb-10 max-w-2xl text-lg text-slate-300 md:text-xl"
-        >
-          Installation, rénovation et dépannage électrique à Paris et Île-de-France.
-          Intervention rapide, devis gratuit, satisfaction garantie.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="flex flex-col items-center justify-center gap-4 sm:flex-row"
-        >
-          <Button
-            href="/devis"
-            variant="secondary"
-            size="lg"
-            iconRight={<ArrowRight className="h-5 w-5" />}
+      {/* Content — asymmetric layout */}
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-8 px-4 py-20 lg:grid-cols-2">
+        {/* Left: Text */}
+        <div>
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mb-4 font-heading text-sm font-medium uppercase tracking-[0.2em] text-electric"
           >
-            Devis Gratuit
-          </Button>
-          <Button
-            href={COMPANY.phoneHref}
-            variant="outline-white"
-            size="lg"
-            icon={<Phone className="h-5 w-5" />}
-          >
-            {COMPANY.phone}
-          </Button>
-        </motion.div>
+            Électricien certifié Qualifelec & RGE
+          </motion.p>
 
-        {/* Trust Mini Bar */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="mb-6 font-heading text-5xl font-extrabold leading-[1.05] text-white sm:text-6xl md:text-7xl lg:text-8xl"
+          >
+            L&apos;électricité,
+            <br />
+            <span className="text-gradient">autrement.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mb-10 max-w-lg text-lg text-slate-400 md:text-xl"
+          >
+            Installation, rénovation, dépannage 24/7.
+            <br className="hidden sm:block" />
+            Paris & Île-de-France — devis gratuit en 2 min.
+          </motion.p>
+
+          {/* Single big CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+          >
+            <Button
+              href="/devis"
+              variant="secondary"
+              size="xl"
+              iconRight={<ArrowRight className="h-5 w-5" />}
+              className="btn-glow"
+            >
+              Devis Gratuit
+            </Button>
+          </motion.div>
+
+          {/* Trust line */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            className="mt-10 flex flex-wrap items-center gap-6 text-sm text-slate-500"
+          >
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber" />
+              {COMPANY.yearsExperience}+ ans
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-electric" />
+              {COMPANY.projectsCompleted}+ projets
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+              {COMPANY.satisfactionRate}% satisfaction
+            </span>
+          </motion.div>
+        </div>
+
+        {/* Right: Circuit SVG */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="hidden lg:block"
         >
-          <span className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-amber" />
-            {COMPANY.yearsExperience}+ ans d&apos;expérience
-          </span>
-          <span className="hidden sm:inline text-slate-600">|</span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-electric" />
-            {COMPANY.projectsCompleted}+ projets réalisés
-          </span>
-          <span className="hidden sm:inline text-slate-600">|</span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-green-500" />
-            Certifié Qualifelec & RGE
-          </span>
+          <HeroCircuit className="h-[500px] w-full opacity-70" />
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-center"
-      >
-        <span className="mb-2 block text-xs text-slate-500">Découvrir</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
-          <ChevronDown className="h-6 w-6 text-electric" />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

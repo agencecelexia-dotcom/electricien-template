@@ -33,24 +33,23 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy/80 to-navy" />
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-            À Propos de <span className="text-electric">{COMPANY.name}</span>
+        <div className="relative z-10 mx-auto max-w-7xl px-4">
+          <h1 className="mb-4 font-heading text-5xl font-extrabold text-white md:text-6xl">
+            À propos de <span className="text-gradient">{COMPANY.name}</span>
           </h1>
-          <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
-          <p className="mx-auto max-w-2xl text-slate-400">
+          <p className="max-w-lg text-lg text-slate-400">
             {COMPANY.yearsExperience} ans d&apos;expertise électrique au service
             de votre confort et de votre sécurité.
           </p>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="py-20">
+      {/* Story + Founder */}
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-3xl font-bold text-slate-800">Notre Histoire</h2>
+              <h2 className="mb-6 font-heading text-4xl font-bold text-navy">Notre histoire</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
                   Fondée il y a {COMPANY.yearsExperience} ans par Marc Durand, maître électricien passionné,
@@ -61,7 +60,7 @@ export default function AboutPage() {
                   Au fil des années, nous avons constitué une équipe de techniciens certifiés,
                   formés aux dernières technologies et normes en vigueur. De l&apos;installation
                   complète à la domotique, en passant par le dépannage d&apos;urgence, nous
-                  couvrons l&apos;ensemble des besoins électriques résidentiels et commerciaux.
+                  couvrons l&apos;ensemble des besoins électriques.
                 </p>
                 <p>
                   Avec plus de {COMPANY.projectsCompleted} projets réalisés et un taux de satisfaction
@@ -75,71 +74,59 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-            <div className="relative h-96 overflow-hidden rounded-2xl bg-slate-100">
-              <Image
-                src="/images/team/atelier.webp"
-                alt="Notre atelier"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+
+            {/* Founder card */}
+            <div className="grid gap-6">
+              {TEAM_MEMBERS.map((member) => (
+                <div key={member.name} className="flex items-center gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-slate-100">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                      sizes="96px"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-xl font-semibold text-navy">{member.name}</h3>
+                    <p className="mb-2 text-sm font-medium text-electric">{member.role}</p>
+                    <p className="text-sm text-slate-600">{member.description}</p>
+                  </div>
+                </div>
+              ))}
+
+              {/* Team group photo */}
+              <div className="relative h-64 overflow-hidden rounded-2xl bg-slate-100">
+                <Image
+                  src="/images/team/equipe-groupe.webp"
+                  alt="L'équipe ÉlectroPro"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="bg-slate-50 py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-14 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-slate-800 md:text-4xl">
-              Notre <span className="text-electric">Équipe</span>
-            </h2>
-            <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {TEAM_MEMBERS.map((member) => (
-              <div key={member.name} className="overflow-hidden rounded-2xl border border-slate-200 bg-white text-center shadow-sm">
-                <div className="relative h-64 bg-slate-100">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-slate-800">{member.name}</h3>
-                  <p className="mb-3 text-sm font-medium text-electric">{member.role}</p>
-                  <p className="text-sm text-slate-600">{member.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Values */}
-      <section className="py-20">
+      <section className="bg-cream py-24 circuit-pattern">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-14 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-slate-800 md:text-4xl">
-              Nos <span className="text-electric">Valeurs</span>
-            </h2>
-            <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
-          </div>
+          <h2 className="mb-14 font-heading text-4xl font-bold text-navy md:text-5xl">
+            Nos <span className="text-gradient-static">valeurs</span>
+          </h2>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => {
               const Icon = value.icon
               return (
-                <div key={value.title} className="text-center">
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-electric/10">
-                    <Icon className="h-7 w-7 text-electric" />
+                <div key={value.title}>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-electric/10">
+                    <Icon className="h-6 w-6 text-electric" />
                   </div>
-                  <h3 className="mb-2 font-semibold text-slate-800">{value.title}</h3>
+                  <h3 className="mb-2 font-heading font-semibold text-navy">{value.title}</h3>
                   <p className="text-sm text-slate-600">{value.description}</p>
                 </div>
               )

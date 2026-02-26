@@ -13,6 +13,7 @@ const variants = {
   emergency: 'bg-red-600 hover:bg-red-700 text-white shadow-lg animate-pulse-glow',
   cta: 'bg-gradient-to-r from-electric to-electric-dark text-white shadow-xl hover:shadow-electric/30',
   'outline-white': 'border-2 border-white text-white hover:bg-white hover:text-navy',
+  glow: 'bg-electric text-white shadow-lg btn-glow',
 }
 
 const sizes = {

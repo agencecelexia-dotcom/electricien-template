@@ -12,20 +12,19 @@ export function RealisationsPreview() {
   const { ref, isVisible } = useScrollAnimation(0.1)
 
   return (
-    <section className="bg-slate-50 py-20" ref={ref}>
+    <section className="bg-white py-24" ref={ref}>
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-14 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-slate-800 md:text-4xl">
-            Nos <span className="text-electric">Réalisations</span>
+        <div className="mb-14 max-w-xl">
+          <h2 className="mb-4 font-heading text-4xl font-bold text-navy md:text-5xl">
+            Avant / <span className="text-gradient-static">Après</span>
           </h2>
-          <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
-          <p className="mx-auto max-w-2xl text-slate-600">
-            Découvrez nos projets avant/après et la qualité de nos interventions.
+          <p className="text-slate-600">
+            La preuve par l&apos;image. Jugez par vous-même.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          {REALISATIONS.slice(0, 4).map((project, index) => (
+        <div className="grid gap-10 md:grid-cols-2">
+          {REALISATIONS.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -37,7 +36,7 @@ export function RealisationsPreview() {
                 afterImage={project.afterImage}
               />
               <div className="mt-4">
-                <h3 className="mb-2 text-lg font-semibold text-slate-800">
+                <h3 className="mb-2 font-heading text-xl font-semibold text-navy">
                   {project.title}
                 </h3>
                 <p className="mb-3 text-sm text-slate-600">{project.description}</p>

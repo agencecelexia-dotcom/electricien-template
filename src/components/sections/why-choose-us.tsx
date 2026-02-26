@@ -8,47 +8,65 @@ export function WhyChooseUs() {
   const { ref, isVisible } = useScrollAnimation(0.1)
 
   return (
-    <section className="bg-white py-20" ref={ref}>
+    <section className="bg-cream py-24 circuit-pattern" ref={ref}>
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-14 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-slate-800 md:text-4xl">
-            Pourquoi Nous <span className="text-electric">Choisir</span>
-          </h2>
-          <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
-          <p className="mx-auto max-w-2xl text-slate-600">
-            Des garanties concrètes pour une tranquillité d&apos;esprit totale
-            sur chacune de nos interventions.
-          </p>
-        </div>
+        <div className="grid items-start gap-16 lg:grid-cols-2">
+          {/* Left: Big title */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-heading text-4xl font-bold text-navy md:text-5xl lg:text-6xl">
+              Pourquoi
+              <br />
+              <span className="text-gradient-static">nous choisir ?</span>
+            </h2>
+            <p className="mt-6 max-w-md text-lg text-slate-600">
+              Des garanties concrètes, pas des promesses en l&apos;air.
+              Chaque intervention est un engagement.
+            </p>
+          </motion.div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {WHY_CHOOSE_US.map((item, index) => {
-            const Icon = item.icon
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
-                className="text-center"
-              >
+          {/* Right: 4 points with metrics */}
+          <div className="space-y-8">
+            {WHY_CHOOSE_US.map((item, index) => {
+              const Icon = item.icon
+              return (
                 <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ repeat: Infinity, duration: 3, delay: index * 0.5 }}
-                  className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-navy to-electric"
+                  key={item.title}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                  transition={{ delay: index * 0.12, duration: 0.5 }}
+                  className="group flex gap-5"
                 >
-                  <Icon className="h-8 w-8 text-amber" />
+                  {/* Metric column */}
+                  <div className="flex w-20 shrink-0 flex-col items-center">
+                    <span className="font-heading text-3xl font-extrabold text-navy">
+                      {item.metric}
+                    </span>
+                    <span className="text-xs text-slate-500">{item.metricLabel}</span>
+                  </div>
+
+                  {/* Separator */}
+                  <div className="w-px bg-electric/20 group-hover:bg-electric/50 transition-colors" />
+
+                  {/* Content */}
+                  <div>
+                    <div className="mb-1 flex items-center gap-2">
+                      <Icon className="h-4 w-4 text-electric" />
+                      <h3 className="font-heading text-lg font-semibold text-navy">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      {item.description}
+                    </p>
+                  </div>
                 </motion.div>
-                <h3 className="mb-2 text-lg font-semibold text-slate-800">
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-slate-600">
-                  {item.description}
-                </p>
-                <div className="mx-auto mt-4 h-0.5 w-12 rounded-full bg-electric/30" />
-              </motion.div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>

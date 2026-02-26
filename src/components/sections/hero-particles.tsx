@@ -1,112 +1,155 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 
-interface Particle {
-  x: number
-  y: number
-  vx: number
-  vy: number
-  radius: number
-  color: string
-  opacity: number
-}
+export function HeroCircuit({ className }: { className?: string }) {
+  const pathVariants = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (i: number) => ({
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { duration: 2, delay: i * 0.3, ease: 'easeInOut' as const },
+        opacity: { duration: 0.5, delay: i * 0.3 },
+      },
+    }),
+  }
 
-export function HeroParticles({ className }: { className?: string }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const dotVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: (i: number) => ({
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.4, delay: i * 0.3 + 1.5 },
+    }),
+  }
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    let animationId: number
-    let particles: Particle[] = []
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth * window.devicePixelRatio
-      canvas.height = canvas.offsetHeight * window.devicePixelRatio
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio)
-    }
-
-    const createParticles = () => {
-      const count = Math.min(40, Math.floor((canvas.offsetWidth * canvas.offsetHeight) / 25000))
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * canvas.offsetWidth,
-        y: Math.random() * canvas.offsetHeight,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: Math.random() * 2 + 1,
-        color: Math.random() > 0.8 ? '#F59E0B' : '#3B82F6',
-        opacity: Math.random() * 0.5 + 0.3,
-      }))
-    }
-
-    const draw = () => {
-      const w = canvas.offsetWidth
-      const h = canvas.offsetHeight
-      ctx.clearRect(0, 0, w, h)
-
-      // Update and draw particles
-      for (const p of particles) {
-        p.x += p.vx
-        p.y += p.vy
-
-        if (p.x < 0 || p.x > w) p.vx *= -1
-        if (p.y < 0 || p.y > h) p.vy *= -1
-
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-        ctx.fillStyle = p.color
-        ctx.globalAlpha = p.opacity
-        ctx.fill()
-      }
-
-      // Draw connections
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x
-          const dy = particles[i].y - particles[j].y
-          const dist = Math.sqrt(dx * dx + dy * dy)
-
-          if (dist < 150) {
-            ctx.beginPath()
-            ctx.moveTo(particles[i].x, particles[i].y)
-            ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = '#3B82F6'
-            ctx.globalAlpha = (1 - dist / 150) * 0.2
-            ctx.lineWidth = 0.5
-            ctx.stroke()
-          }
-        }
-      }
-
-      ctx.globalAlpha = 1
-      animationId = requestAnimationFrame(draw)
-    }
-
-    resize()
-    createParticles()
-    draw()
-
-    const resizeObserver = new ResizeObserver(resize)
-    resizeObserver.observe(canvas)
-
-    return () => {
-      cancelAnimationFrame(animationId)
-      resizeObserver.disconnect()
-    }
-  }, [])
+  const pulseVariants = {
+    hidden: { opacity: 0 },
+    visible: (i: number) => ({
+      opacity: [0.3, 1, 0.3],
+      transition: {
+        duration: 2,
+        delay: i * 0.5 + 2,
+        repeat: Infinity,
+        ease: 'easeInOut' as const,
+      },
+    }),
+  }
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={className}
-      role="presentation"
-      aria-hidden="true"
-      style={{ width: '100%', height: '100%' }}
-    />
+    <div className={className}>
+      <svg
+        viewBox="0 0 500 500"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-full w-full"
+      >
+        {/* Circuit paths */}
+        <motion.path
+          d="M50 250 H150 V100 H300 V200 H400"
+          stroke="#3B82F6"
+          strokeWidth="2"
+          strokeLinecap="round"
+          variants={pathVariants}
+          custom={0}
+          initial="hidden"
+          animate="visible"
+        />
+        <motion.path
+          d="M100 400 H200 V300 H350 V350 H450"
+          stroke="#3B82F6"
+          strokeWidth="2"
+          strokeLinecap="round"
+          variants={pathVariants}
+          custom={1}
+          initial="hidden"
+          animate="visible"
+        />
+        <motion.path
+          d="M250 50 V150 H400 V300"
+          stroke="#60A5FA"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          variants={pathVariants}
+          custom={2}
+          initial="hidden"
+          animate="visible"
+        />
+        <motion.path
+          d="M150 200 H250 V350 H150 V450"
+          stroke="#60A5FA"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          variants={pathVariants}
+          custom={3}
+          initial="hidden"
+          animate="visible"
+        />
+        <motion.path
+          d="M350 100 H450 V250"
+          stroke="#F59E0B"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          variants={pathVariants}
+          custom={4}
+          initial="hidden"
+          animate="visible"
+        />
+        <motion.path
+          d="M300 400 V450 H450"
+          stroke="#F59E0B"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          variants={pathVariants}
+          custom={2}
+          initial="hidden"
+          animate="visible"
+        />
+
+        {/* Junction nodes */}
+        {[
+          { cx: 150, cy: 250 }, { cx: 150, cy: 100 }, { cx: 300, cy: 100 },
+          { cx: 300, cy: 200 }, { cx: 400, cy: 200 }, { cx: 200, cy: 400 },
+          { cx: 200, cy: 300 }, { cx: 350, cy: 300 }, { cx: 350, cy: 350 },
+          { cx: 250, cy: 50 }, { cx: 250, cy: 150 }, { cx: 400, cy: 150 },
+          { cx: 400, cy: 300 }, { cx: 250, cy: 350 }, { cx: 150, cy: 350 },
+          { cx: 450, cy: 250 }, { cx: 350, cy: 100 },
+        ].map((dot, i) => (
+          <motion.circle
+            key={i}
+            cx={dot.cx}
+            cy={dot.cy}
+            r="4"
+            fill="#3B82F6"
+            variants={dotVariants}
+            custom={i * 0.15}
+            initial="hidden"
+            animate="visible"
+          />
+        ))}
+
+        {/* Pulsing glow nodes */}
+        {[
+          { cx: 400, cy: 200, color: '#3B82F6' },
+          { cx: 350, cy: 350, color: '#F59E0B' },
+          { cx: 250, cy: 150, color: '#60A5FA' },
+          { cx: 450, cy: 250, color: '#F59E0B' },
+        ].map((node, i) => (
+          <motion.circle
+            key={`pulse-${i}`}
+            cx={node.cx}
+            cy={node.cy}
+            r="8"
+            fill={node.color}
+            variants={pulseVariants}
+            custom={i}
+            initial="hidden"
+            animate="visible"
+            style={{ filter: 'blur(4px)' }}
+          />
+        ))}
+      </svg>
+    </div>
   )
 }

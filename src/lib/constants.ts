@@ -14,7 +14,7 @@ import {
 
 export const COMPANY = {
   name: 'ÉlectroPro',
-  tagline: 'Votre Expert Électricien',
+  tagline: "L'électricité, autrement.",
   phone: '01 23 45 67 89',
   phoneHref: 'tel:+33123456789',
   email: 'contact@electropro.fr',
@@ -53,6 +53,7 @@ export interface Service {
   features: string[]
   benefits: string[]
   process: { step: number; title: string; description: string }[]
+  cta: string
 }
 
 export const SERVICES: Service[] = [
@@ -60,10 +61,11 @@ export const SERVICES: Service[] = [
     slug: 'installation-electrique',
     title: 'Installation Électrique',
     shortTitle: 'Installation',
-    description: 'Installation électrique complète pour constructions neuves et extensions. Câblage aux normes NF C 15-100.',
+    description: 'On câble votre habitat de A à Z. Tableau, prises, éclairage — tout aux normes NF C 15-100, certifié Consuel.',
     longDescription: 'Nous réalisons l\'installation électrique complète de votre habitat neuf ou en extension. Du tableau électrique au dernier interrupteur, chaque détail est pensé pour votre confort et votre sécurité. Nos installations respectent scrupuleusement la norme NF C 15-100 et sont certifiées Consuel.',
     icon: Plug,
     image: '/images/services/installation-electrique.webp',
+    cta: 'Planifier mon installation',
     features: [
       'Tableau électrique dernière génération',
       'Câblage structuré et organisé',
@@ -89,10 +91,11 @@ export const SERVICES: Service[] = [
     slug: 'renovation-electrique',
     title: 'Rénovation Électrique',
     shortTitle: 'Rénovation',
-    description: 'Modernisez votre installation électrique. Mise à niveau complète avec respect de votre intérieur.',
+    description: 'Votre installation a 15 ans ? On la modernise sans tout casser. Travaux propres, résultat aux normes.',
     longDescription: 'Votre installation date de plus de 15 ans ? Il est temps de la rénover. Nous modernisons votre réseau électrique en minimisant les travaux et en respectant votre intérieur. De la simple mise à niveau du tableau à la rénovation complète, nous adaptons notre intervention à vos besoins.',
     icon: RefreshCw,
     image: '/images/services/renovation-electrique.webp',
+    cta: 'Rénover mon installation',
     features: [
       'Diagnostic complet de l\'existant',
       'Remplacement tableau vétuste',
@@ -118,10 +121,11 @@ export const SERVICES: Service[] = [
     slug: 'depannage-urgence',
     title: 'Dépannage & Urgence',
     shortTitle: 'Urgence 24/7',
-    description: 'Intervention d\'urgence 24h/24, 7j/7. Dépannage rapide en moins de 30 minutes dans votre secteur.',
+    description: 'Panne à 3h du matin ? On est là. Intervention en moins de 30 minutes, diagnostic immédiat sur place.',
     longDescription: 'Panne de courant, court-circuit, disjoncteur qui saute ? Nos techniciens d\'astreinte interviennent 24h/24 et 7j/7 dans un rayon de 50km. En moins de 30 minutes, un expert est chez vous pour diagnostiquer et résoudre votre problème électrique en toute sécurité.',
     icon: Zap,
     image: '/images/services/depannage-urgence.webp',
+    cta: 'Appeler maintenant',
     features: [
       'Disponibilité 24h/24, 7j/7',
       'Intervention en moins de 30 min',
@@ -147,10 +151,11 @@ export const SERVICES: Service[] = [
     slug: 'mise-aux-normes',
     title: 'Mise aux Normes',
     shortTitle: 'Normes',
-    description: 'Mise en conformité NF C 15-100 de votre installation. Diagnostic, rapport et travaux de remise aux normes.',
+    description: 'Vente, location ou simple tranquillité ? On vérifie, on corrige, on certifie. NF C 15-100 garanti.',
     longDescription: 'La norme NF C 15-100 évolue régulièrement. Nous vérifions la conformité de votre installation et réalisons les travaux nécessaires pour la mettre aux normes. Indispensable pour votre sécurité, votre assurance et la vente ou location de votre bien immobilier.',
     icon: ShieldCheck,
     image: '/images/services/mise-aux-normes.webp',
+    cta: 'Vérifier ma conformité',
     features: [
       'Diagnostic électrique complet',
       'Rapport de conformité détaillé',
@@ -176,10 +181,11 @@ export const SERVICES: Service[] = [
     slug: 'domotique-maison-connectee',
     title: 'Domotique & Maison Connectée',
     shortTitle: 'Domotique',
-    description: 'Transformez votre habitat en maison intelligente. Éclairage, chauffage, volets et sécurité connectés.',
+    description: 'Pilotez tout du bout des doigts. Éclairage, chauffage, volets, sécurité — votre maison obéit à la voix.',
     longDescription: 'Pilotez votre maison du bout des doigts. Nous concevons et installons des systèmes domotiques sur mesure : éclairage intelligent, chauffage connecté, volets automatisés, système de sécurité, gestion de l\'énergie. Compatible avec tous les assistants vocaux du marché.',
     icon: Smartphone,
     image: '/images/services/domotique-maison-connectee.webp',
+    cta: 'Connecter ma maison',
     features: [
       'Éclairage intelligent et programmable',
       'Chauffage connecté et économique',
@@ -205,10 +211,11 @@ export const SERVICES: Service[] = [
     slug: 'eclairage',
     title: 'Éclairage',
     shortTitle: 'Éclairage',
-    description: 'Conception et installation d\'éclairage intérieur et extérieur. Design, ambiance et performance énergétique.',
+    description: 'On transforme vos espaces avec la lumière. Design, ambiance, économies — chaque pièce a son caractère.',
     longDescription: 'L\'éclairage transforme votre espace de vie. Nos experts conçoivent des plans d\'éclairage sur mesure alliant esthétique, fonctionnalité et efficacité énergétique. Intérieur comme extérieur, nous créons l\'ambiance parfaite pour chaque pièce et chaque usage.',
     icon: Lightbulb,
     image: '/images/services/eclairage.webp',
+    cta: 'Éclairer mon intérieur',
     features: [
       'Plan d\'éclairage personnalisé',
       'LED dernière génération',
@@ -235,48 +242,48 @@ export const SERVICES: Service[] = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: 'Marie Dupont',
+    name: 'Marie D.',
+    initials: 'MD',
     location: 'Paris 11e',
-    service: 'Rénovation Électrique',
+    service: 'Rénovation',
     rating: 5,
-    text: 'Travail impeccable ! L\'équipe a rénové toute l\'installation de notre appartement haussmannien en une semaine. Propre, rapide et professionnel. Je recommande les yeux fermés.',
-    image: '/images/testimonials/temoignage-1.webp',
+    text: 'Rénovation complète de notre appartement haussmannien en une semaine. Propre, rapide, sans accroc.',
   },
   {
     id: 2,
-    name: 'Jean-Pierre Martin',
-    location: 'Boulogne-Billancourt',
-    service: 'Installation Électrique',
+    name: 'Jean-Pierre M.',
+    initials: 'JP',
+    location: 'Boulogne',
+    service: 'Installation',
     rating: 5,
-    text: 'Pour la construction de notre maison, ÉlectroPro a réalisé toute l\'installation. Du premier contact à la certification Consuel, tout était parfait. Un vrai partenaire de confiance.',
-    image: '/images/testimonials/temoignage-2.webp',
+    text: 'Du premier contact au Consuel, tout était carré. Ils ont câblé toute la maison sans un retard.',
   },
   {
     id: 3,
-    name: 'Sophie & Thomas Laurent',
+    name: 'Sophie L.',
+    initials: 'SL',
     location: 'Vincennes',
     service: 'Domotique',
     rating: 5,
-    text: 'Notre maison est devenue intelligente grâce à eux. Éclairage, volets, chauffage : tout se pilote depuis notre téléphone. Le confort au quotidien a complètement changé.',
-    image: '/images/testimonials/temoignage-3.webp',
+    text: 'Notre maison obéit au doigt et à la voix. Éclairage, volets, chauffage — tout se pilote depuis le canapé.',
   },
   {
     id: 4,
-    name: 'Isabelle Moreau',
+    name: 'Isabelle M.',
+    initials: 'IM',
     location: 'Saint-Mandé',
     service: 'Éclairage',
     rating: 5,
-    text: 'La conception lumière de notre salon est magnifique. Ils ont su créer des ambiances différentes pour chaque moment de la journée. Un vrai travail d\'artiste !',
-    image: '/images/testimonials/temoignage-4.webp',
+    text: 'Des ambiances différentes pour chaque moment. Le salon a changé de personnalité. Bluffant.',
   },
   {
     id: 5,
-    name: 'Robert Petit',
+    name: 'Robert P.',
+    initials: 'RP',
     location: 'Montreuil',
-    service: 'Dépannage Urgence',
+    service: 'Urgence',
     rating: 5,
-    text: 'Panne générale un dimanche soir. J\'ai appelé et en 25 minutes le technicien était là. Problème résolu en une heure. Tarif correct et travail sérieux. Merci !',
-    image: '/images/testimonials/temoignage-5.webp',
+    text: 'Panne un dimanche soir, technicien là en 25 minutes. Problème réglé en une heure. Sérieux.',
   },
 ]
 
@@ -304,10 +311,6 @@ export const FAQ_ITEMS = [
   {
     question: 'Qu\'est-ce que la mise aux normes NF C 15-100 ?',
     answer: 'La norme NF C 15-100 définit les règles de sécurité des installations électriques résidentielles en France. Elle couvre la protection des personnes contre les chocs électriques, la protection contre les incendies et le dimensionnement des circuits. Une installation conforme est obligatoire pour toute vente ou location.',
-  },
-  {
-    question: 'Intervenez-vous pour la domotique ?',
-    answer: 'Oui, nous sommes spécialisés en domotique et maison connectée. Nous installons des systèmes compatibles avec Alexa, Google Home et Apple HomeKit. Éclairage intelligent, chauffage connecté, volets automatisés, alarme : nous concevons un système adapté à votre mode de vie.',
   },
   {
     question: 'Quelle garantie offrez-vous sur vos travaux ?',
@@ -346,29 +349,11 @@ export const REALISATIONS = [
   },
   {
     id: 2,
-    title: 'Éclairage Salon Design',
-    category: 'eclairage',
-    description: 'Transformation complète de l\'éclairage d\'un salon avec création d\'ambiances LED et variateurs intelligents.',
-    beforeImage: '/images/realisations/projet-2-avant.webp',
-    afterImage: '/images/realisations/projet-2-apres.webp',
-    tags: ['Éclairage', 'Domotique'],
-  },
-  {
-    id: 3,
-    title: 'Installation Cuisine Moderne',
-    category: 'installation',
-    description: 'Installation électrique complète d\'une cuisine rénovée avec circuits dédiés et éclairage sous meuble.',
-    beforeImage: '/images/realisations/projet-3-avant.webp',
-    afterImage: '/images/realisations/projet-3-apres.webp',
-    tags: ['Installation', 'Éclairage'],
-  },
-  {
-    id: 4,
     title: 'Éclairage Extérieur Résidentiel',
     category: 'eclairage',
     description: 'Mise en lumière complète de l\'extérieur d\'une maison : allées, façade, jardin et sécurité.',
-    beforeImage: '/images/realisations/projet-4-avant.webp',
-    afterImage: '/images/realisations/projet-4-apres.webp',
+    beforeImage: '/images/realisations/projet-2-avant.webp',
+    afterImage: '/images/realisations/projet-2-apres.webp',
     tags: ['Éclairage', 'Sécurité'],
   },
 ]
@@ -380,46 +365,42 @@ export const TEAM_MEMBERS = [
     description: '15 ans d\'expérience dans l\'électricité résidentielle et commerciale. Certifié Qualifelec et formateur.',
     image: '/images/team/equipe-fondateur.webp',
   },
-  {
-    name: 'Alexandre Bertrand',
-    role: 'Technicien Senior',
-    description: 'Spécialiste en domotique et installations complexes. 8 ans d\'expérience et passionné d\'innovation.',
-    image: '/images/team/equipe-technicien-1.webp',
-  },
-  {
-    name: 'Claire Lefebvre',
-    role: 'Technicienne Spécialisée',
-    description: 'Experte en mise aux normes et diagnostic électrique. Formatrice certifiée en sécurité électrique.',
-    image: '/images/team/equipe-technicien-2.webp',
-  },
 ]
 
 export const STATS = [
-  { value: 15, suffix: '+', label: 'Années d\'Expérience', icon: 'Calendar' as const },
-  { value: 2500, suffix: '+', label: 'Projets Réalisés', icon: 'Briefcase' as const },
-  { value: 98, suffix: '%', label: 'Clients Satisfaits', icon: 'Star' as const },
-  { value: 24, suffix: '/7', label: 'Disponibilité Urgences', icon: 'Clock' as const },
+  { value: 15, suffix: '+', label: "Années d'expérience", icon: 'Calendar' as const },
+  { value: 2500, suffix: '+', label: 'Projets réalisés', icon: 'Briefcase' as const },
+  { value: 98, suffix: '%', label: 'Clients satisfaits', icon: 'Star' as const },
+  { value: 24, suffix: '/7', label: 'Disponibilité urgences', icon: 'Clock' as const },
 ]
 
 export const WHY_CHOOSE_US = [
   {
-    title: 'Expertise Certifiée',
-    description: 'Certifiés Qualifelec et RGE, nos techniciens sont formés aux dernières normes et technologies.',
+    title: 'Certifiés Qualifelec & RGE',
+    description: 'Nos techniciens sont formés et certifiés aux dernières normes. Pas de sous-traitance, jamais.',
     icon: Shield,
+    metric: '100%',
+    metricLabel: 'certifié',
   },
   {
-    title: 'Intervention Rapide',
-    description: 'En cas d\'urgence, nous intervenons en moins de 30 minutes dans votre secteur, 24h/24.',
+    title: 'Intervention < 30 min',
+    description: 'En urgence, on arrive en moins de 30 minutes dans votre secteur. 24h/24, week-ends inclus.',
     icon: Clock,
+    metric: '30',
+    metricLabel: 'minutes',
   },
   {
-    title: 'Devis Transparent',
-    description: 'Devis gratuit et détaillé sans surprise. Vous savez exactement ce que vous payez.',
+    title: 'Devis transparent',
+    description: 'Devis gratuit, détaillé, sans surprise. Vous validez avant qu\'on touche un fil.',
     icon: FileText,
+    metric: '0€',
+    metricLabel: 'le devis',
   },
   {
-    title: 'Garantie Décennale',
-    description: 'Tous nos travaux sont couverts par une garantie décennale pour votre tranquillité.',
+    title: 'Garantie décennale',
+    description: 'Tous nos travaux sont couverts 10 ans. Votre tranquillité, c\'est notre engagement.',
     icon: Award,
+    metric: '10',
+    metricLabel: 'ans',
   },
 ]

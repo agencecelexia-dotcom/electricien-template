@@ -1,99 +1,95 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
+import { Zap, Quote } from 'lucide-react'
 import { TESTIMONIALS } from '@/lib/constants'
-import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 
 export function Testimonials() {
-  const [current, setCurrent] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % TESTIMONIALS.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
-
-  const prev = () => setCurrent((c) => (c - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
-  const next = () => setCurrent((c) => (c + 1) % TESTIMONIALS.length)
-
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-14 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-slate-800 md:text-4xl">
-            Ce Que Disent Nos <span className="text-electric">Clients</span>
-          </h2>
-          <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
+        {/* Header with rating */}
+        <div className="mb-14 flex flex-col items-center gap-6 text-center md:flex-row md:items-end md:text-left">
+          <div className="flex-1">
+            <h2 className="font-heading text-4xl font-bold text-navy md:text-5xl">
+              Ils nous font <span className="text-gradient-static">confiance.</span>
+            </h2>
+          </div>
+          <div className="flex flex-col items-center md:items-end">
+            <div className="flex gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Zap key={i} className="h-5 w-5 fill-amber text-amber" />
+              ))}
+            </div>
+            <span className="mt-1 font-heading text-4xl font-extrabold text-navy">4.9<span className="text-sm font-normal text-slate-400">/5</span></span>
+            <span className="text-xs text-slate-500">basé sur {TESTIMONIALS.length * 50}+ avis</span>
+          </div>
         </div>
 
-        <div className="relative mx-auto max-w-3xl">
-          {/* Large Quote Icon */}
-          <Quote className="absolute -top-4 left-0 h-20 w-20 text-electric/10 md:-left-10" />
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-sm md:p-12"
+        {/* 3 testimonial cards visible */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {TESTIMONIALS.slice(0, 3).map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="group relative rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all hover:border-electric/20 hover:shadow-md"
             >
-              {/* Stars */}
-              <div className="mb-6 flex justify-center gap-1">
-                {Array.from({ length: TESTIMONIALS[current].rating }).map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber text-amber" />
+              <Quote className="absolute right-4 top-4 h-8 w-8 text-electric/10" />
+
+              {/* Rating - lightning bolts */}
+              <div className="mb-4 flex gap-0.5">
+                {Array.from({ length: testimonial.rating }).map((_, i) => (
+                  <Zap key={i} className="h-4 w-4 fill-amber text-amber" />
                 ))}
               </div>
 
-              {/* Quote */}
-              <p className="mb-8 text-lg italic leading-relaxed text-slate-700 md:text-xl">
-                &ldquo;{TESTIMONIALS[current].text}&rdquo;
+              <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                &ldquo;{testimonial.text}&rdquo;
               </p>
 
-              {/* Author */}
-              <div className="flex flex-col items-center gap-3">
-                <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-electric/20">
-                  <Image
-                    src={TESTIMONIALS[current].image}
-                    alt={TESTIMONIALS[current].name}
-                    fill
-                    className="object-cover"
-                    sizes="56px"
-                  />
+              {/* Author with initials */}
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-electric to-electric-dark text-sm font-bold text-white">
+                  {testimonial.initials}
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-800">{TESTIMONIALS[current].name}</p>
-                  <p className="text-sm text-slate-500">{TESTIMONIALS[current].location}</p>
+                  <p className="text-sm font-semibold text-navy">{testimonial.name}</p>
+                  <p className="text-xs text-slate-500">{testimonial.location}</p>
                 </div>
-                <Badge variant="electric">{TESTIMONIALS[current].service}</Badge>
+                <Badge variant="electric" className="ml-auto">{testimonial.service}</Badge>
               </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation */}
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <button onClick={prev} className="rounded-full border border-slate-200 p-2 transition-colors hover:border-electric hover:text-electric" aria-label="Précédent">
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <div className="flex gap-2">
-              {TESTIMONIALS.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className={`h-2 rounded-full transition-all ${i === current ? 'w-8 bg-electric' : 'w-2 bg-slate-300'}`}
-                  aria-label={`Témoignage ${i + 1}`}
-                />
-              ))}
             </div>
-            <button onClick={next} className="rounded-full border border-slate-200 p-2 transition-colors hover:border-electric hover:text-electric" aria-label="Suivant">
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
+          ))}
+        </div>
+
+        {/* Bottom row - 2 more */}
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {TESTIMONIALS.slice(3, 5).map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="group relative rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all hover:border-electric/20 hover:shadow-md"
+            >
+              <div className="mb-3 flex gap-0.5">
+                {Array.from({ length: testimonial.rating }).map((_, i) => (
+                  <Zap key={i} className="h-4 w-4 fill-amber text-amber" />
+                ))}
+              </div>
+
+              <p className="mb-5 text-sm leading-relaxed text-slate-600">
+                &ldquo;{testimonial.text}&rdquo;
+              </p>
+
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber to-amber-dark text-sm font-bold text-navy">
+                  {testimonial.initials}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-navy">{testimonial.name}</p>
+                  <p className="text-xs text-slate-500">{testimonial.location}</p>
+                </div>
+                <Badge variant="electric" className="ml-auto">{testimonial.service}</Badge>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

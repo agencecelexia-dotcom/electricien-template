@@ -14,22 +14,20 @@ export default function RealisationsPage() {
     <>
       {/* Hero Banner */}
       <section className="bg-navy py-20 pt-32">
-        <div className="mx-auto max-w-7xl px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-            Nos <span className="text-electric">Réalisations</span>
+        <div className="mx-auto max-w-7xl px-4">
+          <h1 className="mb-4 font-heading text-5xl font-extrabold text-white md:text-6xl">
+            Avant / <span className="text-gradient">Après</span>
           </h1>
-          <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
-          <p className="mx-auto max-w-2xl text-slate-400">
-            Découvrez nos projets avant/après et jugez par vous-même
-            de la qualité de nos interventions.
+          <p className="max-w-lg text-lg text-slate-400">
+            La preuve par l&apos;image. Jugez de la qualité de nos interventions.
           </p>
         </div>
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid gap-10 md:grid-cols-2">
+          <div className="grid gap-12 md:grid-cols-2">
             {REALISATIONS.map((project) => (
               <div key={project.id} className="space-y-4">
                 <BeforeAfterSlider
@@ -37,7 +35,7 @@ export default function RealisationsPage() {
                   afterImage={project.afterImage}
                 />
                 <div>
-                  <h2 className="mb-2 text-xl font-semibold text-slate-800">
+                  <h2 className="mb-2 font-heading text-xl font-semibold text-navy">
                     {project.title}
                   </h2>
                   <p className="mb-3 text-slate-600">{project.description}</p>

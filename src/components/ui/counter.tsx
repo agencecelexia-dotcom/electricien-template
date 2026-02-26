@@ -17,11 +17,11 @@ export function Counter({ end, suffix = '', label, className }: CounterProps) {
 
   return (
     <div ref={ref} className={cn('text-center', className)}>
-      <div className="font-display text-4xl font-bold text-amber md:text-5xl">
+      <div className="font-heading text-5xl font-extrabold text-navy md:text-6xl">
         {count}
-        {suffix}
+        <span className="text-electric">{suffix}</span>
       </div>
-      <p className="mt-2 text-sm text-slate-300 md:text-base">{label}</p>
+      <p className="mt-1 text-sm text-slate-500">{label}</p>
     </div>
   )
 }
