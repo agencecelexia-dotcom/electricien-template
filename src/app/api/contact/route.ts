@@ -1,5 +1,18 @@
 import { NextResponse } from 'next/server'
 import { contactFormSchema } from '@/lib/validations'
+import { readStorage, writeStorage } from '@/lib/storage'
+
+interface Submission {
+  id: string
+  type: 'contact' | 'devis'
+  nom: string
+  email: string
+  telephone: string
+  message: string
+  statut: string
+  createdAt: string
+  updatedAt: string
+}
 
 export async function POST(request: Request) {
   try {
@@ -13,8 +26,20 @@ export async function POST(request: Request) {
       )
     }
 
-    // TODO: Integrate email service (Resend, SendGrid, etc.)
-    console.log('API contact submission:', result.data)
+    const submissions = await readStorage<Submission>('submissions')
+    const newSubmission: Submission = {
+      id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
+      type: 'contact',
+      nom: result.data.name,
+      email: result.data.email,
+      telephone: result.data.phone,
+      message: result.data.message,
+      statut: 'Nouveau',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }
+    submissions.unshift(newSubmission)
+    await writeStorage('submissions', submissions)
 
     return NextResponse.json({
       success: true,
