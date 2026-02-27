@@ -79,13 +79,13 @@ export default function AboutPage() {
             <div className="grid gap-6">
               {TEAM_MEMBERS.map((member) => (
                 <div key={member.name} className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex items-center gap-6">
-                  <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-slate-100">
+                  <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl bg-slate-100">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="object-cover"
-                      sizes="96px"
+                      className="object-cover object-top"
+                      sizes="112px"
                     />
                   </div>
                   <div>

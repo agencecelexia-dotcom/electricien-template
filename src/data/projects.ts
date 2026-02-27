@@ -62,8 +62,8 @@ export const projects: Project[] = [
       'Construction neuve nécessitant une installation électrique complète intégrant domotique, bornes de recharge véhicule électrique et pré-câblage pour panneaux solaires futurs.',
     solution:
       'Pose de 45 circuits répartis sur un tableau 6 rangées, câblage structuré Cat6 dans chaque pièce, pré-câblage domotique KNX, installation d\'une borne de recharge 7kW et passage Consuel sans réserve.',
-    beforeImage: '/images/realisations/projet-1-avant.webp',
-    afterImage: '/images/realisations/projet-1-apres.webp',
+    beforeImage: '/images/realisations/projet-3-avant.webp',
+    afterImage: '/images/realisations/projet-3-apres.webp',
     tags: ['Installation', 'Neuf', 'Consuel'],
     featured: true,
     location: 'Boulogne-Billancourt',
@@ -80,8 +80,8 @@ export const projects: Project[] = [
       'Les propriétaires souhaitaient centraliser le contrôle de tous les équipements de leur villa de 200m2 tout en conservant la possibilité d\'utiliser les interrupteurs traditionnels.',
     solution:
       'Déploiement d\'un système KNX avec serveur Loxone, 32 circuits d\'éclairage variés, 12 volets motorisés, thermostat connecté par zone, vidéosurveillance IP et intégration Apple HomeKit.',
-    beforeImage: '/images/realisations/projet-2-avant.webp',
-    afterImage: '/images/realisations/projet-2-apres.webp',
+    beforeImage: '/images/realisations/projet-4-avant.webp',
+    afterImage: '/images/realisations/projet-4-apres.webp',
     tags: ['Domotique', 'KNX', 'Maison Connectée'],
     featured: false,
     location: 'Neuilly-sur-Seine',
@@ -98,8 +98,8 @@ export const projects: Project[] = [
       'L\'immeuble datant de 1965 présentait un diagnostic électrique alarmant : absence de mise à la terre dans les communs, éclairage de secours inexistant et tableau général hors d\'âge.',
     solution:
       'Refonte complète du tableau des parties communes, création d\'une terre générale, installation de blocs autonomes d\'éclairage de sécurité (BAES), remplacement du câblage des couloirs et caves, et délivrance d\'une attestation de conformité.',
-    beforeImage: '/images/realisations/projet-1-avant.webp',
-    afterImage: '/images/realisations/projet-1-apres.webp',
+    beforeImage: '/images/realisations/projet-5-avant.webp',
+    afterImage: '/images/realisations/projet-5-apres.webp',
     tags: ['Mise aux Normes', 'Copropriété', 'Sécurité'],
     featured: false,
     location: 'Paris 15e',
@@ -116,8 +116,8 @@ export const projects: Project[] = [
       'Court-circuit survenu à 4h du matin dans le laboratoire de la boulangerie, mettant en péril la production du jour. Le disjoncteur général refusait de réarmer et une odeur de brûlé était présente.',
     solution:
       'Intervention en 25 minutes, localisation du défaut sur un circuit four, isolation du câble endommagé, remplacement du disjoncteur divisionnaire et remise sous tension partielle immédiate. Retour le lendemain pour réparation définitive du circuit.',
-    beforeImage: '/images/realisations/projet-2-avant.webp',
-    afterImage: '/images/realisations/projet-2-apres.webp',
+    beforeImage: '/images/realisations/projet-6-avant.webp',
+    afterImage: '/images/realisations/projet-6-apres.webp',
     tags: ['Urgence', 'Commerce', 'Dépannage'],
     featured: false,
     location: 'Montreuil',

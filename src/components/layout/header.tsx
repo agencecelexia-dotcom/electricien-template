@@ -30,7 +30,7 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
           {/* Logo */}
-          <Link href="/" className="group flex items-center gap-2 cursor-pointer">
+          <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="group flex items-center gap-2 cursor-pointer">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-electric text-white transition-shadow duration-200 group-hover:shadow-md group-hover:shadow-electric/20">
               <Zap className="h-6 w-6" />
             </div>

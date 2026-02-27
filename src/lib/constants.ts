@@ -356,6 +356,24 @@ export const REALISATIONS = [
     afterImage: '/images/realisations/projet-2-apres.webp',
     tags: ['Éclairage', 'Sécurité'],
   },
+  {
+    id: 3,
+    title: 'Installation Maison Neuve 150m²',
+    category: 'installation',
+    description: 'Installation complète d\'une maison neuve sur deux niveaux, incluant domotique et pré-câblage solaire.',
+    beforeImage: '/images/realisations/projet-3-avant.webp',
+    afterImage: '/images/realisations/projet-3-apres.webp',
+    tags: ['Installation', 'Neuf', 'Consuel'],
+  },
+  {
+    id: 4,
+    title: 'Domotique Villa Contemporaine',
+    category: 'domotique',
+    description: 'Système KNX complet : 32 circuits d\'éclairage, 12 volets motorisés, vidéosurveillance et Apple HomeKit.',
+    beforeImage: '/images/realisations/projet-4-avant.webp',
+    afterImage: '/images/realisations/projet-4-apres.webp',
+    tags: ['Domotique', 'Maison Connectée'],
+  },
 ]
 
 export const TEAM_MEMBERS = [

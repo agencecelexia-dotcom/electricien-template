@@ -1,0 +1,56 @@
+[
+  {
+    "id": "temo1a2b3",
+    "nom": "Marie D.",
+    "ville": "Paris 11e",
+    "texte": "Rénovation complète de notre appartement haussmannien en une semaine. Propre, rapide, sans accroc. Le tableau est maintenant impeccable et tout est aux normes.",
+    "note": 5,
+    "createdAt": "2026-01-20T09:00:00.000Z",
+    "updatedAt": "2026-01-20T09:00:00.000Z"
+  },
+  {
+    "id": "temo4c5d6",
+    "nom": "Jean-Pierre M.",
+    "ville": "Boulogne-Billancourt",
+    "texte": "Du premier contact au Consuel, tout était carré. Ils ont câblé toute la maison sans un retard. Équipe très professionnelle.",
+    "note": 5,
+    "createdAt": "2026-01-25T14:30:00.000Z",
+    "updatedAt": "2026-01-25T14:30:00.000Z"
+  },
+  {
+    "id": "temo7e8f9",
+    "nom": "Sophie L.",
+    "ville": "Vincennes",
+    "texte": "Notre maison obéit au doigt et à la voix. Éclairage, volets, chauffage — tout se pilote depuis le canapé. Installation domotique parfaite.",
+    "note": 5,
+    "createdAt": "2026-02-01T11:15:00.000Z",
+    "updatedAt": "2026-02-01T11:15:00.000Z"
+  },
+  {
+    "id": "temog0h1i",
+    "nom": "Isabelle M.",
+    "ville": "Saint-Mandé",
+    "texte": "Des ambiances différentes pour chaque moment de la journée. Le salon a changé de personnalité grâce à l'éclairage. Bluffant.",
+    "note": 5,
+    "createdAt": "2026-02-05T16:45:00.000Z",
+    "updatedAt": "2026-02-05T16:45:00.000Z"
+  },
+  {
+    "id": "temoj2k3l",
+    "nom": "Robert P.",
+    "ville": "Montreuil",
+    "texte": "Panne un dimanche soir, technicien là en 25 minutes. Problème réglé en une heure. Sérieux et efficace, je recommande sans hésiter.",
+    "note": 5,
+    "createdAt": "2026-02-10T20:00:00.000Z",
+    "updatedAt": "2026-02-10T20:00:00.000Z"
+  },
+  {
+    "id": "temom4n5o",
+    "nom": "Catherine F.",
+    "ville": "Neuilly-sur-Seine",
+    "texte": "Mise aux normes complète de notre appartement avant la vente. Diagnostic précis, travaux soignés, attestation obtenue rapidement. Prix très raisonnable.",
+    "note": 5,
+    "createdAt": "2026-02-15T10:30:00.000Z",
+    "updatedAt": "2026-02-15T10:30:00.000Z"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "proj1a2b3",
+    "titre": "Rénovation Tableau Électrique",
+    "description": "Remplacement complet d'un tableau électrique vétuste des années 70 par une installation moderne NF C 15-100 dans un appartement haussmannien.",
+    "categorie": "renovation",
+    "imageBefore": "/images/realisations/projet-1-avant.webp",
+    "imageAfter": "/images/realisations/projet-1-apres.webp",
+    "featured": true,
+    "createdAt": "2026-01-15T10:00:00.000Z",
+    "updatedAt": "2026-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "proj4c5d6",
+    "titre": "Éclairage Extérieur Résidentiel",
+    "description": "Mise en lumière complète de l'extérieur d'une maison : allées, façade, jardin et éclairage de sécurité avec détecteurs de présence.",
+    "categorie": "eclairage",
+    "imageBefore": "/images/realisations/projet-2-avant.webp",
+    "imageAfter": "/images/realisations/projet-2-apres.webp",
+    "featured": true,
+    "createdAt": "2026-01-20T10:00:00.000Z",
+    "updatedAt": "2026-01-20T10:00:00.000Z"
+  },
+  {
+    "id": "proj7e8f9",
+    "titre": "Installation Maison Neuve 150m²",
+    "description": "Installation électrique complète d'une maison neuve de 150m² sur deux niveaux, avec domotique et pré-câblage solaire.",
+    "categorie": "installation",
+    "imageBefore": "/images/realisations/projet-3-avant.webp",
+    "imageAfter": "/images/realisations/projet-3-apres.webp",
+    "featured": true,
+    "createdAt": "2026-02-01T10:00:00.000Z",
+    "updatedAt": "2026-02-01T10:00:00.000Z"
+  },
+  {
+    "id": "projg0h1i",
+    "titre": "Domotique Villa Contemporaine",
+    "description": "Système domotique KNX complet : 32 circuits d'éclairage, 12 volets motorisés, vidéosurveillance IP et intégration Apple HomeKit.",
+    "categorie": "domotique",
+    "imageBefore": "/images/realisations/projet-4-avant.webp",
+    "imageAfter": "/images/realisations/projet-4-apres.webp",
+    "featured": false,
+    "createdAt": "2026-02-10T10:00:00.000Z",
+    "updatedAt": "2026-02-10T10:00:00.000Z"
+  },
+  {
+    "id": "projj2k3l",
+    "titre": "Mise aux Normes Immeuble 12 Lots",
+    "description": "Mise en conformité électrique des parties communes : terre générale, BAES, tableau rénové, câblage remplacé.",
+    "categorie": "normes",
+    "imageBefore": "/images/realisations/projet-5-avant.webp",
+    "imageAfter": "/images/realisations/projet-5-apres.webp",
+    "featured": false,
+    "createdAt": "2026-02-15T10:00:00.000Z",
+    "updatedAt": "2026-02-15T10:00:00.000Z"
+  },
+  {
+    "id": "projm4n5o",
+    "titre": "Dépannage Urgent Boulangerie",
+    "description": "Intervention nocturne d'urgence suite à un court-circuit dans le laboratoire. Remise sous tension en 1h, réparation définitive le lendemain.",
+    "categorie": "urgence",
+    "imageBefore": "/images/realisations/projet-6-avant.webp",
+    "imageAfter": "/images/realisations/projet-6-apres.webp",
+    "featured": false,
+    "createdAt": "2026-02-20T10:00:00.000Z",
+    "updatedAt": "2026-02-20T10:00:00.000Z"
+  }
+]

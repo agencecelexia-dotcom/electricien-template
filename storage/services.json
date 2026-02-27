@@ -1,0 +1,44 @@
+[
+  {
+    "id": "svc1a2b3c",
+    "titre": "Installation Électrique",
+    "description": "Installation électrique complète pour habitations neuves et extensions. Tableau, prises, éclairage — tout aux normes NF C 15-100, certifié Consuel.",
+    "createdAt": "2026-01-15T10:00:00.000Z",
+    "updatedAt": "2026-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "svc4d5e6f",
+    "titre": "Rénovation Électrique",
+    "description": "Modernisation de votre installation sans tout casser. Remplacement tableau, mise en conformité câblage, ajout de circuits dédiés. Travaux propres, résultat aux normes.",
+    "createdAt": "2026-01-15T10:01:00.000Z",
+    "updatedAt": "2026-01-15T10:01:00.000Z"
+  },
+  {
+    "id": "svc7g8h9i",
+    "titre": "Dépannage & Urgence 24/7",
+    "description": "Intervention en moins de 30 minutes, 24h/24 et 7j/7. Diagnostic immédiat sur place, tarifs transparents annoncés avant intervention.",
+    "createdAt": "2026-01-15T10:02:00.000Z",
+    "updatedAt": "2026-01-15T10:02:00.000Z"
+  },
+  {
+    "id": "svcaj0k1l",
+    "titre": "Mise aux Normes NF C 15-100",
+    "description": "Diagnostic complet, rapport de conformité détaillé, mise aux normes et attestation de conformité. Indispensable pour vente ou location.",
+    "createdAt": "2026-01-15T10:03:00.000Z",
+    "updatedAt": "2026-01-15T10:03:00.000Z"
+  },
+  {
+    "id": "svcbm2n3o",
+    "titre": "Domotique & Maison Connectée",
+    "description": "Éclairage intelligent, chauffage connecté, volets automatisés, sécurité. Compatible Alexa, Google Home, Apple HomeKit.",
+    "createdAt": "2026-01-15T10:04:00.000Z",
+    "updatedAt": "2026-01-15T10:04:00.000Z"
+  },
+  {
+    "id": "svcc4p5q6",
+    "titre": "Éclairage Design & LED",
+    "description": "Plans d'éclairage personnalisés, LED dernière génération, éclairage architectural intérieur et extérieur, variateurs et scènes d'ambiance.",
+    "createdAt": "2026-01-15T10:05:00.000Z",
+    "updatedAt": "2026-01-15T10:05:00.000Z"
+  }
+]

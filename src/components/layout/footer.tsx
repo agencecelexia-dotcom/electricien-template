@@ -100,25 +100,27 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
-          <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} {COMPANY.name} &mdash; SIRET 123 456 789 00012
-          </p>
-          <div className="flex gap-6 text-xs text-slate-500">
-            <Link href="/mentions-legales" className="transition-colors duration-200 hover:text-slate-300 cursor-pointer">
-              Mentions légales
-            </Link>
-            <Link href="/politique-confidentialite" className="transition-colors duration-200 hover:text-slate-300 cursor-pointer">
-              Politique de confidentialité
-            </Link>
-            <Link
-              href="/admin/dashboard"
-              className="opacity-40 transition-opacity duration-200 hover:opacity-100 cursor-pointer"
-            >
-              Admin
-            </Link>
+        <div className="mt-12 border-t border-white/10 pt-8 space-y-4">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+            <p className="text-xs text-slate-500">
+              &copy; {new Date().getFullYear()} {COMPANY.name} &mdash; SIRET 123 456 789 00012
+            </p>
+            <div className="flex gap-6 text-xs text-slate-500">
+              <Link href="/mentions-legales" className="transition-colors duration-200 hover:text-slate-300 cursor-pointer">
+                Mentions légales
+              </Link>
+              <Link href="/politique-confidentialite" className="transition-colors duration-200 hover:text-slate-300 cursor-pointer">
+                Politique de confidentialité
+              </Link>
+              <Link
+                href="/admin/dashboard"
+                className="opacity-40 transition-opacity duration-200 hover:opacity-100 cursor-pointer"
+              >
+                Admin
+              </Link>
+            </div>
           </div>
-          <p className="text-xs text-slate-500">
+          <p className="text-center text-xs text-slate-500">
             Site conçu par{' '}
             <a
               href="https://agencecelexia.fr"
