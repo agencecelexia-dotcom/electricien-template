@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
 import { readStorage, writeStorage } from '@/lib/storage'
+
+async function checkAuth() {
+  const cookieStore = await cookies()
+  const auth = cookieStore.get('admin_auth')
+  return auth && auth.value === 'electricien-admin-session-v1'
+}
 
 interface Testimonial {
   id: string
@@ -12,6 +19,7 @@ interface Testimonial {
 }
 
 export async function GET() {
+  if (!(await checkAuth())) return NextResponse.json({ error: 'Non autorisé' }, { status: 401 })
   try {
     const testimonials = await readStorage<Testimonial>('testimonials')
     return NextResponse.json(testimonials)
@@ -21,6 +29,7 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  if (!(await checkAuth())) return NextResponse.json({ error: 'Non autorisé' }, { status: 401 })
   try {
     const { action, data, id } = await request.json()
     const testimonials = await readStorage<Testimonial>('testimonials')

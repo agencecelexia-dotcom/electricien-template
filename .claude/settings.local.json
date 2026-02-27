@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); print\\(data[0][''text''][:15000]\\)\")",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const d=JSON.parse\\(fs.readFileSync\\(''C:/Users/AA/.claude/projects/c--Users-AA-electricien-template/9d847764-2551-46ea-bf2d-4738a1ea18ef/tool-results/toolu_01H7u22FppmfVSkUo31u5Q7e.json'',''utf8''\\)\\); process.stdout.write\\(d[0].text.substring\\(0,20000\\)\\)\")",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const d=JSON.parse\\(fs.readFileSync\\(''C:/Users/AA/.claude/projects/c--Users-AA-electricien-template/9d847764-2551-46ea-bf2d-4738a1ea18ef/tool-results/toolu_01H7u22FppmfVSkUo31u5Q7e.json'',''utf8''\\)\\); process.stdout.write\\(d[0].text.substring\\(20000,40000\\)\\)\")",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const d=JSON.parse\\(fs.readFileSync\\(''C:/Users/AA/.claude/projects/c--Users-AA-electricien-template/9d847764-2551-46ea-bf2d-4738a1ea18ef/tool-results/toolu_01H7u22FppmfVSkUo31u5Q7e.json'',''utf8''\\)\\); process.stdout.write\\(d[0].text.substring\\(40000\\)\\)\")",
+      "Bash(npm run build)",
+      "Bash(npx next build)",
+      "Bash(git add .gitignore README.md eslint.config.mjs next.config.ts package-lock.json package.json postcss.config.mjs tsconfig.json src/)",
+      "Bash(git commit:*)",
+      "Bash(git push -u origin main)",
+      "Bash(git add src/app/a-propos/page.tsx src/app/devis/page.tsx src/app/globals.css src/app/layout.tsx src/app/page.tsx src/app/realisations/page.tsx src/components/layout/footer.tsx src/components/layout/header.tsx src/components/sections/emergency-cta.tsx src/components/sections/faq.tsx src/components/sections/final-cta.tsx src/components/sections/hero-particles.tsx src/components/sections/hero.tsx src/components/sections/realisations-preview.tsx src/components/sections/services-overview.tsx src/components/sections/testimonials.tsx src/components/sections/trust-bar.tsx src/components/sections/why-choose-us.tsx src/components/ui/button.tsx src/components/ui/counter.tsx src/lib/constants.ts)",
+      "Bash(git push origin main)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/NeverSight/skills_feed/main/data/skills-md/samhvw8/dot-claude/frontend-development/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/NeverSight/skills_feed/main/data/skills-md/samhvw8/dot-claude/aesthetic/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/NeverSight/skills_feed/main/data/skills-md/samhvw8/dot-claude/ui-design-system/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/NeverSight/skills_feed/main/data/skills-md/samhvw8/dot-claude/ui-ux-design/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/NeverSight/skills_feed/main/data/skills-md/samhvw8/dot-claude/nextjs-turborepo/SKILL.md\")",
+      "Bash(git add src/app/a-propos/page.tsx src/app/globals.css \"src/app/services/[slug]/page.tsx\" src/app/services/page.tsx src/components/layout/footer.tsx src/components/layout/header.tsx src/components/layout/mobile-nav.tsx src/components/sections/emergency-cta.tsx src/components/sections/faq.tsx src/components/sections/final-cta.tsx src/components/sections/hero.tsx src/components/sections/services-overview.tsx src/components/sections/testimonials.tsx src/components/sections/why-choose-us.tsx src/components/ui/accordion.tsx src/components/ui/before-after-slider.tsx)",
+      "Bash(git add src/app/a-propos/page.tsx src/app/contact/page.tsx src/app/devis/page.tsx src/app/globals.css src/app/layout.tsx src/app/not-found.tsx src/app/realisations/page.tsx src/app/services/[slug]/page.tsx src/app/services/page.tsx src/components/forms/contact-form.tsx src/components/forms/quote-form.tsx src/components/layout/floating-cta.tsx src/components/layout/footer.tsx src/components/layout/header.tsx src/components/layout/mobile-nav.tsx src/components/sections/emergency-cta.tsx src/components/sections/faq.tsx src/components/sections/final-cta.tsx src/components/sections/hero.tsx src/components/sections/realisations-preview.tsx src/components/sections/services-overview.tsx src/components/sections/testimonials.tsx src/components/sections/trust-bar.tsx src/components/sections/why-choose-us.tsx src/components/ui/accordion.tsx src/components/ui/badge.tsx src/components/ui/button.tsx src/components/ui/counter.tsx src/components/ui/input.tsx)",
+      "Bash(git add src/components/ui/lightning-background.tsx src/app/a-propos/page.tsx src/app/contact/page.tsx src/app/devis/page.tsx src/app/globals.css src/app/layout.tsx src/app/not-found.tsx src/app/realisations/page.tsx src/app/services/[slug]/page.tsx src/app/services/page.tsx src/components/forms/contact-form.tsx src/components/forms/quote-form.tsx src/components/layout/floating-cta.tsx src/components/layout/footer.tsx src/components/layout/header.tsx src/components/layout/mobile-nav.tsx src/components/sections/emergency-cta.tsx src/components/sections/faq.tsx src/components/sections/final-cta.tsx src/components/sections/hero.tsx src/components/sections/realisations-preview.tsx src/components/sections/services-overview.tsx src/components/sections/testimonials.tsx src/components/sections/trust-bar.tsx src/components/sections/why-choose-us.tsx src/components/ui/accordion.tsx src/components/ui/badge.tsx src/components/ui/button.tsx src/components/ui/counter.tsx src/components/ui/input.tsx)",
+      "Bash(git add src/app/layout.tsx src/app/globals.css)",
+      "Bash(git add CLIENT.md scripts/ src/config/ src/data/ src/lib/storage.ts src/middleware.ts src/app/admin/ src/app/api/admin/ src/app/blog/ src/app/loading.tsx src/app/mentions-legales/ src/app/politique-confidentialite/ src/components/admin/ src/components/animations/ src/components/features/ src/components/layout/LayoutShell.tsx src/components/ui/CookieBanner.tsx src/components/ui/ScrollProgress.tsx storage/ package.json src/app/contact/page.tsx src/app/globals.css src/app/layout.tsx src/app/robots.ts src/app/sitemap.ts src/components/forms/contact-form.tsx src/components/layout/footer.tsx)",
+      "Bash(git push)",
+      "Bash(git add -A)"
+    ]
+  }
+}
