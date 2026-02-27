@@ -26,7 +26,13 @@
       "Bash(git add src/app/layout.tsx src/app/globals.css)",
       "Bash(git add CLIENT.md scripts/ src/config/ src/data/ src/lib/storage.ts src/middleware.ts src/app/admin/ src/app/api/admin/ src/app/blog/ src/app/loading.tsx src/app/mentions-legales/ src/app/politique-confidentialite/ src/components/admin/ src/components/animations/ src/components/features/ src/components/layout/LayoutShell.tsx src/components/ui/CookieBanner.tsx src/components/ui/ScrollProgress.tsx storage/ package.json src/app/contact/page.tsx src/app/globals.css src/app/layout.tsx src/app/robots.ts src/app/sitemap.ts src/components/forms/contact-form.tsx src/components/layout/footer.tsx)",
       "Bash(git push)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(git add src/app/api/contact/route.ts src/components/admin/DashboardTab.tsx src/lib/actions.ts src/app/api/admin/submissions/route.ts)",
+      "Bash(git add storage/submissions.json)",
+      "Bash(git add public/images/ src/config/images.ts)",
+      "Bash(git add src/app/a-propos/page.tsx src/components/layout/footer.tsx src/components/layout/header.tsx src/components/sections/hero.tsx src/config/images.ts src/data/projects.ts src/lib/constants.ts storage/services.json storage/testimonials.json storage/projects.json)",
+      "Bash(git add public/images/realisations/projet-3-avant.webp public/images/realisations/projet-3-apres.webp public/images/realisations/projet-4-avant.webp public/images/realisations/projet-4-apres.webp public/images/realisations/projet-5-avant.webp public/images/realisations/projet-5-apres.webp public/images/realisations/projet-6-avant.webp public/images/realisations/projet-6-apres.webp)",
+      "Bash(git add src/components/sections/services-overview.tsx)"
     ]
   }
 }

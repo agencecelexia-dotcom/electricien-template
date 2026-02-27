@@ -374,6 +374,24 @@ export const REALISATIONS = [
     afterImage: '/images/realisations/projet-4-apres.webp',
     tags: ['Domotique', 'Maison Connectée'],
   },
+  {
+    id: 5,
+    title: 'Mise aux Normes Immeuble 12 Lots',
+    category: 'normes',
+    description: 'Mise en conformité électrique des parties communes : terre générale, BAES, tableau rénové.',
+    beforeImage: '/images/realisations/projet-5-avant.webp',
+    afterImage: '/images/realisations/projet-5-apres.webp',
+    tags: ['Mise aux Normes', 'Copropriété'],
+  },
+  {
+    id: 6,
+    title: 'Dépannage Urgent Boulangerie',
+    category: 'urgence',
+    description: 'Intervention nocturne d\'urgence suite à un court-circuit. Remise sous tension en 1h.',
+    beforeImage: '/images/realisations/projet-6-avant.webp',
+    afterImage: '/images/realisations/projet-6-apres.webp',
+    tags: ['Urgence', 'Commerce'],
+  },
 ]
 
 export const TEAM_MEMBERS = [
