@@ -70,7 +70,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileNavOpen(true)}
-            className="p-2 text-white lg:hidden"
+            className="cursor-pointer p-2 text-white transition-colors duration-200 hover:text-electric lg:hidden"
             aria-label="Ouvrir le menu"
           >
             <Menu className="h-6 w-6" />

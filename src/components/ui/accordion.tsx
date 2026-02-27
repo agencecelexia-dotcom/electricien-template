@@ -32,7 +32,8 @@ export function Accordion({ items, className }: AccordionProps) {
         >
           <button
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            className="flex w-full items-center justify-between gap-4 p-5 text-left"
+            className="flex w-full cursor-pointer items-center justify-between gap-4 p-5 text-left"
+            aria-expanded={openIndex === index}
           >
             <span className="font-semibold text-slate-800">{item.question}</span>
             <motion.div

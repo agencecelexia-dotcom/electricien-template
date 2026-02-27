@@ -17,10 +17,9 @@ export default function ServicesPage() {
       {/* Hero Banner */}
       <section className="bg-navy py-20 pt-32">
         <div className="mx-auto max-w-7xl px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-            Nos <span className="text-electric">Services</span> Électriques
+          <h1 className="mb-4 font-heading text-5xl font-extrabold text-white md:text-6xl">
+            Nos <span className="text-gradient">Services</span>
           </h1>
-          <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
           <p className="mx-auto max-w-2xl text-slate-400">
             Des solutions complètes pour tous vos besoins électriques,
             du dépannage d&apos;urgence aux installations les plus complexes.
@@ -38,7 +37,7 @@ export default function ServicesPage() {
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+                  className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
                 >
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden bg-slate-100">

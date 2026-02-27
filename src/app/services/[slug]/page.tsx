@@ -63,13 +63,13 @@ export default async function ServiceDetailPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="relative bg-navy py-20 pt-32">
+      <section className="noise-overlay relative bg-navy py-20 pt-32">
         <div className="absolute inset-0">
           <Image src={service.image} alt="" fill className="object-cover opacity-20" sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-b from-navy/80 to-navy" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4">
-          <Link href="/services" className="mb-6 inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
+          <Link href="/services" className="mb-6 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-200 hover:text-white">
             <ArrowLeft className="h-4 w-4" /> Tous les services
           </Link>
           <div className="flex items-center gap-4">
@@ -77,7 +77,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               <Icon className="h-8 w-8 text-electric" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-white md:text-4xl lg:text-5xl">{service.title}</h1>
+              <h1 className="font-heading text-3xl font-extrabold text-white md:text-4xl lg:text-5xl">{service.title}</h1>
               <p className="mt-2 text-lg text-slate-400">{service.description}</p>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <h2 className="mb-6 text-2xl font-bold text-slate-800">Ce Qui Est Inclus</h2>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {service.features.map((feature) => (
-                    <div key={feature} className="flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50 p-4">
+                    <div key={feature} className="flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50 p-4 transition-all duration-200 hover:border-electric/20 hover:shadow-sm">
                       <Check className="mt-0.5 h-5 w-5 shrink-0 text-electric" />
                       <span className="text-sm text-slate-700">{feature}</span>
                     </div>
@@ -170,7 +170,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* Related Services */}
       <section className="border-t border-slate-100 bg-slate-50 py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="mb-8 text-2xl font-bold text-slate-800">Services Associés</h2>
+          <h2 className="mb-8 font-heading text-2xl font-bold text-navy">Services Associés</h2>
           <div className="grid gap-6 sm:grid-cols-3">
             {relatedServices.map((related) => {
               const RelatedIcon = related.icon
@@ -178,13 +178,13 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <Link
                   key={related.slug}
                   href={`/services/${related.slug}`}
-                  className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all hover:-translate-y-1 hover:shadow-md"
+                  className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-electric/10">
                     <RelatedIcon className="h-6 w-6 text-electric" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800 group-hover:text-electric transition-colors">{related.title}</h3>
+                    <h3 className="font-semibold text-slate-800 transition-colors duration-200 group-hover:text-electric">{related.title}</h3>
                     <p className="text-xs text-slate-500 line-clamp-1">{related.description}</p>
                   </div>
                 </Link>

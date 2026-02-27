@@ -11,7 +11,7 @@ export function ServicesOverview() {
   const { ref, isVisible } = useScrollAnimation(0.1)
 
   return (
-    <section className="bg-navy py-24" ref={ref}>
+    <section className="noise-overlay bg-navy py-24" ref={ref}>
       <div className="mx-auto max-w-7xl px-4">
         {/* Section Header — left aligned */}
         <div className="mb-14 max-w-xl">
@@ -38,7 +38,7 @@ export function ServicesOverview() {
                 className={isLarge ? 'lg:row-span-2' : ''}
               >
                 <Link href={`/services/${service.slug}`} className="group relative block h-full">
-                  <div className={`relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/5 bg-navy-light transition-all duration-300 group-hover:border-electric/30 ${isLarge ? 'min-h-[400px]' : 'min-h-[180px]'}`}>
+                  <div className={`relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/5 bg-navy-light transition-all duration-200 group-hover:-translate-y-1 group-hover:border-electric/30 group-hover:shadow-lg group-hover:shadow-electric/5 ${isLarge ? 'min-h-[400px]' : 'min-h-[180px]'}`}>
                     {/* Background image for large cards */}
                     {isLarge && (
                       <div className="absolute inset-0">
@@ -54,7 +54,7 @@ export function ServicesOverview() {
                     )}
 
                     <div className="relative z-10 flex flex-1 flex-col justify-end p-6">
-                      <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-electric/10 transition-colors group-hover:bg-electric/20">
+                      <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-electric/10 transition-all duration-200 group-hover:bg-electric/20 group-hover:scale-110">
                         <Icon className="h-5 w-5 text-electric" />
                       </div>
                       <h3 className="mb-1.5 font-heading text-lg font-semibold text-white">

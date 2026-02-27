@@ -42,14 +42,14 @@ export function WhyChooseUs() {
                 >
                   {/* Metric column */}
                   <div className="flex w-20 shrink-0 flex-col items-center">
-                    <span className="font-heading text-3xl font-extrabold text-navy">
+                    <span className="font-heading text-3xl font-extrabold text-navy transition-colors duration-200 group-hover:text-electric">
                       {item.metric}
                     </span>
                     <span className="text-xs text-slate-500">{item.metricLabel}</span>
                   </div>
 
                   {/* Separator */}
-                  <div className="w-px bg-electric/20 group-hover:bg-electric/50 transition-colors" />
+                  <div className="w-px bg-electric/20 transition-all duration-200 group-hover:w-0.5 group-hover:bg-electric/50" />
 
                   {/* Content */}
                   <div>

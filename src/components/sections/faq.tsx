@@ -48,7 +48,7 @@ export function FAQ() {
                   </h3>
                   <div className="flex flex-wrap gap-2 pl-6">
                     {area.cities.map((city) => (
-                      <span key={city} className="rounded-lg bg-white px-3 py-1 text-xs text-slate-600 shadow-sm">
+                      <span key={city} className="rounded-lg bg-white px-3 py-1 text-xs text-slate-600 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:text-electric">
                         {city}
                       </span>
                     ))}

@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 
 export function Testimonials() {
   return (
-    <section className="bg-white py-24">
+    <section className="noise-overlay bg-white py-24">
       <div className="mx-auto max-w-7xl px-4">
         {/* Header with rating */}
         <div className="mb-14 flex flex-col items-center gap-6 text-center md:flex-row md:items-end md:text-left">
@@ -31,9 +31,9 @@ export function Testimonials() {
           {TESTIMONIALS.slice(0, 3).map((testimonial) => (
             <div
               key={testimonial.id}
-              className="group relative rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all hover:border-electric/20 hover:shadow-md"
+              className="group relative rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-electric/20 hover:shadow-lg"
             >
-              <Quote className="absolute right-4 top-4 h-8 w-8 text-electric/10" />
+              <Quote className="absolute right-4 top-4 h-8 w-8 text-electric/10 transition-colors duration-200 group-hover:text-electric/20" />
 
               {/* Rating - lightning bolts */}
               <div className="mb-4 flex gap-0.5">
@@ -66,7 +66,7 @@ export function Testimonials() {
           {TESTIMONIALS.slice(3, 5).map((testimonial) => (
             <div
               key={testimonial.id}
-              className="group relative rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all hover:border-electric/20 hover:shadow-md"
+              className="group relative rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-electric/20 hover:shadow-lg"
             >
               <div className="mb-3 flex gap-0.5">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (

@@ -24,7 +24,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 text-white"
+            className="absolute top-5 right-5 cursor-pointer p-2 text-white transition-colors duration-200 hover:text-electric"
             aria-label="Fermer le menu"
           >
             <X className="h-7 w-7" />

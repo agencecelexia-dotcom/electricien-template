@@ -22,7 +22,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy py-20 pt-32">
+      <section className="noise-overlay relative bg-navy py-20 pt-32">
         <div className="absolute inset-0">
           <Image
             src="/images/team/equipe-groupe.webp"
@@ -122,8 +122,8 @@ export default function AboutPage() {
             {values.map((value) => {
               const Icon = value.icon
               return (
-                <div key={value.title}>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-electric/10">
+                <div key={value.title} className="group">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-electric/10 transition-all duration-200 group-hover:scale-110 group-hover:bg-electric/20">
                     <Icon className="h-6 w-6 text-electric" />
                   </div>
                   <h3 className="mb-2 font-heading font-semibold text-navy">{value.title}</h3>

@@ -9,7 +9,7 @@ export function FinalCTA() {
   const { ref, isVisible } = useScrollAnimation(0.2)
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-navy py-32">
+    <section ref={ref} className="noise-overlay relative overflow-hidden bg-navy py-32">
       {/* Animated gradient mesh background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-electric blur-[100px]" />

@@ -34,11 +34,11 @@ export function Footer() {
 
             {/* Contact info inline */}
             <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-400">
-              <a href={COMPANY.phoneHref} className="flex items-center gap-2 transition-colors hover:text-amber">
+              <a href={COMPANY.phoneHref} className="flex items-center gap-2 transition-colors duration-200 hover:text-amber">
                 <Phone className="h-4 w-4 text-electric" />
                 {COMPANY.phone}
               </a>
-              <a href={`mailto:${COMPANY.email}`} className="flex items-center gap-2 transition-colors hover:text-amber">
+              <a href={`mailto:${COMPANY.email}`} className="flex items-center gap-2 transition-colors duration-200 hover:text-amber">
                 <Mail className="h-4 w-4 text-electric" />
                 {COMPANY.email}
               </a>
@@ -98,8 +98,8 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {COMPANY.name}. Tous droits réservés.
           </p>
           <div className="flex gap-6 text-xs text-slate-500">
-            <Link href="#" className="hover:text-slate-300">Mentions légales</Link>
-            <Link href="#" className="hover:text-slate-300">Confidentialité</Link>
+            <Link href="#" className="transition-colors duration-200 hover:text-slate-300">Mentions légales</Link>
+            <Link href="#" className="transition-colors duration-200 hover:text-slate-300">Confidentialité</Link>
           </div>
         </div>
       </div>

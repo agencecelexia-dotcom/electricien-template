@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-navy">
+    <section className="noise-overlay relative flex min-h-screen items-center overflow-hidden bg-navy">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -21,6 +21,12 @@ export function Hero() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/40" />
+      </div>
+
+      {/* Ambient glows */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-32 -left-32 h-64 w-64 rounded-full bg-electric/10 blur-[100px]" />
+        <div className="absolute -bottom-32 -right-32 h-64 w-64 rounded-full bg-amber/8 blur-[100px]" />
       </div>
 
       {/* Content — asymmetric layout */}

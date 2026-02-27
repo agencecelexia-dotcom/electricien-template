@@ -10,7 +10,7 @@ export function EmergencyCTA() {
   const { ref, isVisible } = useScrollAnimation(0.2)
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-gradient-to-br from-red-900 via-navy-dark to-navy py-24">
+    <section ref={ref} className="noise-overlay relative overflow-hidden bg-gradient-to-br from-red-900 via-navy-dark to-navy py-24">
       {/* Background pulse */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500 blur-[120px] animate-pulse-glow" />
@@ -30,7 +30,7 @@ export function EmergencyCTA() {
           {/* Phone number as design element */}
           <a
             href={COMPANY.phoneHref}
-            className="mb-6 block font-heading text-5xl font-extrabold text-white transition-colors hover:text-amber sm:text-6xl md:text-7xl"
+            className="mb-6 block font-heading text-5xl font-extrabold text-white transition-all duration-200 hover:scale-[1.02] hover:text-amber sm:text-6xl md:text-7xl"
           >
             {COMPANY.phone}
           </a>

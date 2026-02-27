@@ -39,6 +39,11 @@ export function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
+      role="slider"
+      aria-label="Comparer avant et après"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(sliderPosition)}
       className={cn('relative cursor-ew-resize select-none overflow-hidden rounded-2xl', className)}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
