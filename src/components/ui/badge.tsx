@@ -2,10 +2,9 @@ import { cn } from '@/lib/utils'
 
 const variants = {
   electric: 'bg-electric/10 text-electric border-electric/20',
-  volt: 'bg-volt/10 text-volt border-volt/20',
   amber: 'bg-amber/10 text-amber-dark border-amber/20',
   success: 'bg-green-50 text-green-700 border-green-200',
-  outline: 'bg-transparent text-slate-400 border-white/20',
+  outline: 'bg-transparent text-slate-500 border-slate-300',
   white: 'bg-white/10 text-white border-white/20',
 }
 

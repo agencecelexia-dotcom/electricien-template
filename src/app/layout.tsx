@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { FloatingCTA } from '@/components/layout/floating-cta'
+import { LightningBackground } from '@/components/ui/lightning-background'
 import { COMPANY } from '@/lib/constants'
 
 const outfit = Outfit({
@@ -84,8 +85,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <LightningBackground />
         <Header />
-        <main>{children}</main>
+        <main className="relative z-10">{children}</main>
         <Footer />
         <FloatingCTA />
       </body>

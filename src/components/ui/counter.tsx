@@ -20,11 +20,11 @@ export function Counter({ end, suffix = '', label, className, numberClassName, s
 
   return (
     <div ref={ref} className={cn('text-center', className)}>
-      <div className={cn('font-heading text-5xl font-extrabold text-volt md:text-6xl', numberClassName)}>
+      <div className={cn('font-heading text-5xl font-extrabold text-electric md:text-6xl', numberClassName)}>
         {count}
-        <span className={cn('text-electric', suffixClassName)}>{suffix}</span>
+        <span className={cn('text-electric-dark', suffixClassName)}>{suffix}</span>
       </div>
-      <p className={cn('mt-1 text-sm text-slate-400', labelClassName)}>{label}</p>
+      <p className={cn('mt-1 text-sm text-slate-600', labelClassName)}>{label}</p>
     </div>
   )
 }

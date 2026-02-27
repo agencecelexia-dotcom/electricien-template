@@ -13,9 +13,9 @@ import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 const urgencyOptions = [
-  { value: 'normal', label: 'Normal - sous 1 semaine', color: 'border-green-500/30 bg-green-500/10 text-green-400' },
-  { value: 'urgent', label: 'Urgent - sous 48h', color: 'border-amber-500/30 bg-amber-500/10 text-amber-400' },
-  { value: 'tres-urgent', label: 'Très urgent - aujourd\'hui', color: 'border-red-500/30 bg-red-500/10 text-red-400' },
+  { value: 'normal', label: 'Normal - sous 1 semaine', color: 'border-green-200 bg-green-50 text-green-700' },
+  { value: 'urgent', label: 'Urgent - sous 48h', color: 'border-amber-200 bg-amber-50 text-amber-700' },
+  { value: 'tres-urgent', label: 'Très urgent - aujourd\'hui', color: 'border-red-200 bg-red-50 text-red-700' },
 ]
 
 export function QuoteForm({ compact = false }: { compact?: boolean }) {
@@ -36,15 +36,15 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="rounded-2xl border border-volt/20 bg-volt/5 p-8 text-center"
+        className="rounded-2xl border border-electric/20 bg-electric/5 p-8 text-center"
       >
-        <CheckCircle className="mx-auto mb-4 h-12 w-12 text-volt" />
-        <h3 className="mb-2 text-xl font-semibold text-white">Demande envoyée !</h3>
-        <p className="mb-4 text-slate-300">{state.message}</p>
-        <div className="flex items-center justify-center gap-2 text-slate-300">
+        <CheckCircle className="mx-auto mb-4 h-12 w-12 text-electric" />
+        <h3 className="mb-2 text-xl font-semibold text-slate-900">Demande envoyée !</h3>
+        <p className="mb-4 text-slate-600">{state.message}</p>
+        <div className="flex items-center justify-center gap-2 text-slate-600">
           <Phone className="h-5 w-5" />
           <span>Ou appelez-nous directement : </span>
-          <a href={COMPANY.phoneHref} className="font-bold text-volt underline">
+          <a href={COMPANY.phoneHref} className="font-bold text-electric underline">
             {COMPANY.phone}
           </a>
         </div>
@@ -92,14 +92,14 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
 
       {/* Urgency Selector */}
       <div className="space-y-2">
-        <label className="block text-sm font-medium text-slate-300">Niveau d&apos;urgence</label>
+        <label className="block text-sm font-medium text-slate-700">Niveau d&apos;urgence</label>
         <div className={cn('grid gap-3', compact ? 'grid-cols-1' : 'grid-cols-3')}>
           {urgencyOptions.map((option) => (
             <label
               key={option.value}
               className={cn(
                 'flex cursor-pointer items-center gap-2 rounded-xl border-2 px-4 py-3 transition-all duration-200',
-                selectedUrgency === option.value ? option.color : 'border-white/10 bg-white/5 text-slate-400',
+                selectedUrgency === option.value ? option.color : 'border-slate-200 bg-white text-slate-500',
               )}
             >
               <input
@@ -142,7 +142,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
 
       <Button
         type="submit"
-        variant="volt"
+        variant="primary"
         loading={isPending}
         size="lg"
         className="w-full"

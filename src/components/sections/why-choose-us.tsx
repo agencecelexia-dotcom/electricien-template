@@ -8,7 +8,7 @@ export function WhyChooseUs() {
   const { ref, isVisible } = useScrollAnimation(0.1)
 
   return (
-    <section className="bg-cream py-24 circuit-pattern" ref={ref}>
+    <section className="bg-white py-24" ref={ref}>
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid items-start gap-16 lg:grid-cols-2">
           {/* Left: Big title */}
@@ -17,13 +17,13 @@ export function WhyChooseUs() {
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, ease: 'easeOut' as const }}
           >
-            <h2 className="scan-line font-heading text-4xl font-bold text-navy md:text-5xl lg:text-6xl">
+            <h2 className="font-heading text-4xl font-bold text-slate-900 md:text-5xl lg:text-6xl">
               Pourquoi
               <br />
-              <span className="text-gradient-static">nous choisir ?</span>
+              <span className="text-electric">nous choisir ?</span>
             </h2>
             <p className="mt-6 max-w-md text-lg text-slate-600">
-              Des garanties concrètes, pas des promesses en l&apos;air.
+              Des garanties concretes, pas des promesses en l&apos;air.
               Chaque intervention est un engagement.
             </p>
           </motion.div>
@@ -42,20 +42,22 @@ export function WhyChooseUs() {
                 >
                   {/* Metric column */}
                   <div className="flex w-20 shrink-0 flex-col items-center">
-                    <span className="font-heading text-3xl font-extrabold text-volt transition-colors duration-200 group-hover:text-electric">
+                    <span className="font-heading text-3xl font-extrabold text-electric">
                       {item.metric}
                     </span>
                     <span className="text-xs text-slate-500">{item.metricLabel}</span>
                   </div>
 
                   {/* Separator */}
-                  <div className="w-px bg-volt/30 transition-all duration-200 group-hover:w-0.5 group-hover:bg-volt" />
+                  <div className="w-px bg-slate-200" />
 
                   {/* Content */}
                   <div>
                     <div className="mb-1 flex items-center gap-2">
-                      <Icon className="h-4 w-4 text-electric" />
-                      <h3 className="font-heading text-lg font-semibold text-navy">
+                      <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-electric/10">
+                        <Icon className="h-4 w-4 text-electric" />
+                      </div>
+                      <h3 className="font-heading text-lg font-semibold text-slate-900">
                         {item.title}
                       </h3>
                     </div>

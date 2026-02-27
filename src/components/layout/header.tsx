@@ -24,31 +24,30 @@ export function Header() {
         className={cn(
           'sticky top-0 z-40 transition-all duration-200',
           scrolled
-            ? 'glass-dark shadow-lg shadow-navy/30'
-            : 'bg-transparent'
+            ? 'bg-white/95 backdrop-blur-sm shadow-sm'
+            : 'bg-white/80 backdrop-blur-sm'
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-          {/* Logo with subtle glow */}
+          {/* Logo */}
           <Link href="/" className="group flex items-center gap-2 cursor-pointer">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-electric transition-shadow duration-200 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-              <Zap className="h-6 w-6 text-white" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-electric text-white transition-shadow duration-200 group-hover:shadow-md group-hover:shadow-electric/20">
+              <Zap className="h-6 w-6" />
             </div>
-            <span className="font-heading text-xl font-bold text-white">
+            <span className="font-heading text-xl font-bold text-slate-900">
               {COMPANY.name}
             </span>
           </Link>
 
-          {/* Desktop Nav with animated volt underline */}
+          {/* Desktop Nav */}
           <nav className="hidden items-center gap-8 lg:flex">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative cursor-pointer py-1 text-sm font-medium text-white/80 transition-colors duration-200 hover:text-white"
+                className="cursor-pointer py-1 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-electric"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-volt transition-all duration-200 group-hover:w-full" />
               </Link>
             ))}
           </nav>
@@ -57,17 +56,12 @@ export function Header() {
           <div className="hidden items-center gap-4 lg:flex">
             <a
               href={COMPANY.phoneHref}
-              className="flex items-center gap-2 cursor-pointer text-sm font-medium text-white/90 transition-colors duration-200 hover:text-volt"
+              className="flex items-center gap-2 cursor-pointer text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-electric"
             >
-              {/* Pulsing volt dot — "we're online" indicator */}
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-volt opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-volt" />
-              </span>
               <Phone className="h-4 w-4" />
               {COMPANY.phone}
             </a>
-            <Button href="/devis" variant="secondary" size="sm">
+            <Button href="/devis" variant="primary" size="sm">
               Devis Gratuit
             </Button>
           </div>
@@ -75,7 +69,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileNavOpen(true)}
-            className="cursor-pointer p-2 text-white transition-colors duration-200 hover:text-volt lg:hidden"
+            className="cursor-pointer p-2 text-slate-700 transition-colors duration-200 hover:text-electric lg:hidden"
             aria-label="Ouvrir le menu"
           >
             <Menu className="h-6 w-6" />

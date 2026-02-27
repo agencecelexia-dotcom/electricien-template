@@ -26,8 +26,8 @@ export function Accordion({ items, className }: AccordionProps) {
           className={cn(
             'rounded-2xl border transition-all duration-200',
             openIndex === index
-              ? 'border-volt/30 bg-volt/5 shadow-sm shadow-volt/5'
-              : 'border-white/10 bg-white/5 hover:border-volt/20'
+              ? 'border-electric/30 bg-electric/5 shadow-sm'
+              : 'border-slate-200 bg-white hover:border-electric/20'
           )}
         >
           <button
@@ -35,12 +35,12 @@ export function Accordion({ items, className }: AccordionProps) {
             className="flex w-full cursor-pointer items-center justify-between gap-4 p-5 text-left"
             aria-expanded={openIndex === index}
           >
-            <span className="font-semibold text-white">{item.question}</span>
+            <span className="font-semibold text-slate-900">{item.question}</span>
             <motion.div
               animate={{ rotate: openIndex === index ? 180 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              <ChevronDown className="h-5 w-5 shrink-0 text-volt" />
+              <ChevronDown className="h-5 w-5 shrink-0 text-electric" />
             </motion.div>
           </button>
           <AnimatePresence>
@@ -52,10 +52,10 @@ export function Accordion({ items, className }: AccordionProps) {
                 transition={{ duration: 0.3, ease: 'easeInOut' as const }}
                 className="overflow-hidden"
               >
-                <div className="border-t border-volt/10 px-5 pb-5 pt-4">
+                <div className="border-t border-electric/10 px-5 pb-5 pt-4">
                   <div className="flex gap-3">
-                    <div className="mt-1 h-full w-0.5 shrink-0 rounded-full bg-volt" />
-                    <p className="text-slate-300 leading-relaxed">{item.answer}</p>
+                    <div className="mt-1 h-full w-0.5 shrink-0 rounded-full bg-electric" />
+                    <p className="text-slate-600 leading-relaxed">{item.answer}</p>
                   </div>
                 </div>
               </motion.div>

@@ -28,7 +28,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-navy-light py-20">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service) => {
@@ -37,10 +37,10 @@ export default function ServicesPage() {
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className="group glass block cursor-pointer overflow-hidden rounded-2xl transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-electric/10"
+                  className="group bg-white border border-slate-200 rounded-2xl shadow-sm block cursor-pointer overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:border-electric/30 hover:shadow-md"
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden bg-navy">
+                  <div className="relative h-48 overflow-hidden bg-slate-100">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -60,24 +60,24 @@ export default function ServicesPage() {
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-electric/10">
                         <Icon className="h-5 w-5 text-electric" />
                       </div>
-                      <h2 className="text-lg font-semibold text-white">
+                      <h2 className="text-lg font-semibold text-slate-900">
                         {service.title}
                       </h2>
                     </div>
-                    <p className="mb-4 text-sm leading-relaxed text-slate-300">
+                    <p className="mb-4 text-sm leading-relaxed text-slate-600">
                       {service.description}
                     </p>
                     <ul className="mb-4 space-y-1">
                       {service.features.slice(0, 3).map((feature) => (
-                        <li key={feature} className="flex items-center gap-2 text-xs text-slate-400">
+                        <li key={feature} className="flex items-center gap-2 text-xs text-slate-500">
                           <span className="h-1 w-1 rounded-full bg-electric" />
                           {feature}
                         </li>
                       ))}
                     </ul>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-volt transition-colors duration-200">
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-electric transition-colors duration-200">
                       En savoir plus
-                      <ArrowRight className="h-4 w-4 transition-all duration-200 group-hover:translate-x-1 group-hover:text-volt" />
+                      <ArrowRight className="h-4 w-4 transition-all duration-200 group-hover:translate-x-1 group-hover:text-electric" />
                     </span>
                   </div>
                 </Link>

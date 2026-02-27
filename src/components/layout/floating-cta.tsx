@@ -41,7 +41,7 @@ export function FloatingCTA() {
             href={COMPANY.phoneHref}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="flex h-14 w-14 items-center justify-center rounded-full bg-volt text-navy shadow-lg shadow-volt/30 animate-pulse-glow"
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-electric text-white shadow-lg shadow-electric/30"
             aria-label="Appeler"
           >
             <Phone className="h-7 w-7" />
