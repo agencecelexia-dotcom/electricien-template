@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Outfit, Syne } from 'next/font/google'
+import { Outfit } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
@@ -13,12 +13,7 @@ const outfit = Outfit({
   display: 'swap',
 })
 
-const syne = Syne({
-  subsets: ['latin'],
-  variable: '--font-syne',
-  display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
-})
+
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://electropro.fr'),
@@ -77,7 +72,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="fr" className={`${outfit.variable} ${syne.variable}`}>
+    <html lang="fr" className={outfit.variable}>
       <head>
         <script
           type="application/ld+json"
