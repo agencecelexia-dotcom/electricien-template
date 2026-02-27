@@ -2,7 +2,7 @@
 
 /* === Custom Theme === */
 @theme {
-  /* Colors */
+  /* Colors — refined palette */
   --color-navy: #0A1628;
   --color-navy-light: #0F2140;
   --color-navy-dark: #060E1A;
@@ -14,10 +14,10 @@
   --color-amber-dark: #D97706;
   --color-cream: #F5F0E8;
   --color-cream-dark: #EBE4D8;
+  --color-volt: #CAFF04;
 
-  /* Fonts */
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  /* Fonts — distinctive choices */
+  --font-sans: var(--font-outfit), system-ui, sans-serif;
   --font-heading: var(--font-syne), system-ui, sans-serif;
 
   /* Animations */
@@ -25,14 +25,18 @@
   --animate-slide-up: slide-up 0.6s ease-out;
   --animate-glow: glow 2s ease-in-out infinite;
   --animate-spark: spark 1.5s ease-in-out infinite;
-  --animate-float: float 3s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
   --animate-draw-line: draw-line 2s ease-out forwards;
   --animate-pulse-electric: pulse-electric 3s ease-in-out infinite;
   --animate-text-reveal: text-reveal 0.8s ease-out forwards;
+  --animate-orbit: orbit 20s linear infinite;
 }
 
-/* Keyframes */
+/* ==========================================
+   KEYFRAMES
+   ========================================== */
+
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -55,7 +59,7 @@
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes pulse-glow {
@@ -93,13 +97,31 @@
   50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.2); }
 }
 
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes charge-pulse {
+  0%, 100% { opacity: 0.6; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.02); }
+}
+
 @property --angle {
   syntax: '<angle>';
   initial-value: 0deg;
   inherits: false;
 }
 
-/* === Global Styles === */
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+
 html {
   scroll-behavior: smooth;
 }
@@ -107,18 +129,23 @@ html {
 body {
   font-family: var(--font-sans);
   color: #1e293b;
-  background-color: white;
+  background-color: #0A1628;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* === Typography === */
+/* ==========================================
+   TYPOGRAPHY — DISTINCTIVE
+   ========================================== */
+
 .font-heading {
   font-family: var(--font-heading);
+  letter-spacing: -0.02em;
 }
 
+/* Animated gradient text — electric charge feel */
 .text-gradient {
-  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 40%, #F59E0B 80%, #FBBF24 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 30%, #CAFF04 60%, #F59E0B 100%);
   background-size: 200% 200%;
   animation: gradient-shift 4s ease infinite;
   -webkit-background-clip: text;
@@ -133,7 +160,60 @@ body {
   background-clip: text;
 }
 
-/* === Electric border animation === */
+/* Volt accent text */
+.text-volt {
+  color: #CAFF04;
+}
+
+/* ==========================================
+   SECTION DIVIDERS — Electric Lines
+   ========================================== */
+
+/* Horizontal electric line divider */
+.divider-electric {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #3B82F6 15%, #CAFF04 50%, #3B82F6 85%, transparent 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.divider-electric::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, transparent 0%, #3B82F6 15%, #CAFF04 50%, #3B82F6 85%, transparent 100%);
+  filter: blur(4px);
+  opacity: 0.5;
+}
+
+/* Angled section clip */
+.clip-angle-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), 0 100%);
+}
+
+.clip-angle-top {
+  clip-path: polygon(0 48px, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ==========================================
+   CARD STYLES — Cut Corners (Circuit Board Feel)
+   ========================================== */
+
+.card-cut {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+}
+
+.card-cut-sm {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+/* ==========================================
+   ELECTRIC BORDER ANIMATION
+   ========================================== */
+
 .electric-border {
   position: relative;
   overflow: hidden;
@@ -149,7 +229,7 @@ body {
     from var(--angle, 0deg),
     transparent 40%,
     #3B82F6 50%,
-    #F59E0B 55%,
+    #CAFF04 55%,
     transparent 60%
   );
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -163,25 +243,34 @@ body {
   opacity: 1;
 }
 
-/* === Glassmorphism === */
+/* ==========================================
+   GLASSMORPHISM
+   ========================================== */
+
 .glass {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-dark {
-  background: rgba(10, 22, 40, 0.7);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(59, 130, 246, 0.15);
+  background: rgba(10, 22, 40, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.1);
 }
 
-/* === Circuit pattern background === */
+/* ==========================================
+   CIRCUIT PATTERN BACKGROUND
+   ========================================== */
+
 .circuit-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h30v0h20M60 10v30M60 40h30M10 10v40M10 50h20M30 50v20M30 70h40M70 70v20M70 90h20M90 50v40' fill='none' stroke='%233B82F6' stroke-width='0.5' opacity='0.15'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%233B82F6' opacity='0.2'/%3E%3Ccircle cx='60' cy='10' r='2' fill='%233B82F6' opacity='0.2'/%3E%3Ccircle cx='60' cy='40' r='2' fill='%233B82F6' opacity='0.2'/%3E%3Ccircle cx='10' cy='50' r='2' fill='%233B82F6' opacity='0.2'/%3E%3Ccircle cx='30' cy='70' r='2' fill='%233B82F6' opacity='0.2'/%3E%3Ccircle cx='70' cy='90' r='2' fill='%233B82F6' opacity='0.2'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h30v0h20M60 10v30M60 40h30M10 10v40M10 50h20M30 50v20M30 70h40M70 70v20M70 90h20M90 50v40' fill='none' stroke='%233B82F6' stroke-width='0.5' opacity='0.08'/%3E%3Ccircle cx='10' cy='10' r='1.5' fill='%233B82F6' opacity='0.12'/%3E%3Ccircle cx='60' cy='10' r='1.5' fill='%233B82F6' opacity='0.12'/%3E%3Ccircle cx='60' cy='40' r='1.5' fill='%233B82F6' opacity='0.12'/%3E%3Ccircle cx='10' cy='50' r='1.5' fill='%233B82F6' opacity='0.12'/%3E%3Ccircle cx='30' cy='70' r='1.5' fill='%233B82F6' opacity='0.12'/%3E%3Ccircle cx='70' cy='90' r='1.5' fill='%233B82F6' opacity='0.12'/%3E%3C/svg%3E");
 }
 
-/* === Glow button === */
+/* ==========================================
+   GLOW BUTTON
+   ========================================== */
+
 .btn-glow {
   position: relative;
   z-index: 1;
@@ -192,18 +281,21 @@ body {
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  background: linear-gradient(135deg, #3B82F6, #F59E0B);
+  background: linear-gradient(135deg, #3B82F6, #CAFF04);
   z-index: -1;
   opacity: 0;
-  filter: blur(12px);
-  transition: opacity 0.3s ease;
+  filter: blur(14px);
+  transition: opacity 0.2s ease;
 }
 
 .btn-glow:hover::after {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
-/* === Noise texture overlay === */
+/* ==========================================
+   NOISE TEXTURE OVERLAY
+   ========================================== */
+
 .noise-overlay {
   position: relative;
 }
@@ -212,7 +304,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px;
   pointer-events: none;
@@ -220,7 +312,30 @@ body {
   border-radius: inherit;
 }
 
-/* === Focus visible === */
+/* ==========================================
+   SCAN LINE EFFECT (for headings)
+   ========================================== */
+
+.scan-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.15), transparent);
+  animation: scan-line 3s ease-in-out infinite;
+}
+
+/* ==========================================
+   FOCUS + A11Y
+   ========================================== */
+
 *:focus-visible {
   outline: 2px solid #3B82F6;
   outline-offset: 2px;
@@ -233,7 +348,6 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* === Reduced motion === */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -249,13 +363,15 @@ a:focus-visible {
   }
 }
 
-/* === Selection === */
+/* ==========================================
+   SELECTION + SCROLLBAR
+   ========================================== */
+
 ::selection {
-  background: #3B82F6;
-  color: white;
+  background: #CAFF04;
+  color: #0A1628;
 }
 
-/* === Scrollbar === */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -265,7 +381,7 @@ a:focus-visible {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #3B82F6, #F59E0B);
+  background: linear-gradient(180deg, #3B82F6, #CAFF04);
   border-radius: 3px;
 }
 

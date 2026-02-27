@@ -5,16 +5,16 @@ import { Button } from '@/components/ui/button'
 
 export function Footer() {
   return (
-    <footer className="bg-navy">
-      {/* Electric line accent */}
-      <div className="h-px bg-gradient-to-r from-transparent via-electric to-transparent" />
+    <footer className="noise-overlay relative bg-navy">
+      {/* Electric divider accent */}
+      <div className="divider-electric" />
 
-      <div className="mx-auto max-w-7xl px-4 py-16">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-16">
         <div className="grid gap-12 lg:grid-cols-5">
           {/* Left: Brand + CTA (spans 3) */}
           <div className="lg:col-span-3">
-            <div className="mb-4 flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-electric">
+            <div className="group mb-4 flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-electric transition-shadow duration-200 group-hover:shadow-[0_0_20px_rgba(202,255,4,0.4)]">
                 <Zap className="h-6 w-6 text-white" />
               </div>
               <span className="font-heading text-xl font-bold text-white">{COMPANY.name}</span>
@@ -25,7 +25,7 @@ export function Footer() {
             </p>
             <Button
               href="/devis"
-              variant="secondary"
+              variant="volt"
               size="md"
               iconRight={<ArrowRight className="h-4 w-4" />}
             >
@@ -34,11 +34,11 @@ export function Footer() {
 
             {/* Contact info inline */}
             <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-400">
-              <a href={COMPANY.phoneHref} className="flex items-center gap-2 transition-colors duration-200 hover:text-amber">
+              <a href={COMPANY.phoneHref} className="flex items-center gap-2 transition-colors duration-200 hover:text-volt cursor-pointer">
                 <Phone className="h-4 w-4 text-electric" />
                 {COMPANY.phone}
               </a>
-              <a href={`mailto:${COMPANY.email}`} className="flex items-center gap-2 transition-colors duration-200 hover:text-amber">
+              <a href={`mailto:${COMPANY.email}`} className="flex items-center gap-2 transition-colors duration-200 hover:text-volt cursor-pointer">
                 <Mail className="h-4 w-4 text-electric" />
                 {COMPANY.email}
               </a>
@@ -60,14 +60,14 @@ export function Footer() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block text-sm text-slate-400 transition-colors hover:text-amber"
+                    className="block text-sm text-slate-400 transition-colors duration-200 hover:text-volt cursor-pointer"
                   >
                     {item.label}
                   </Link>
                 ))}
                 <Link
                   href="/devis"
-                  className="block text-sm font-medium text-amber transition-colors hover:text-amber-light"
+                  className="block text-sm font-medium text-volt transition-colors duration-200 hover:brightness-110 cursor-pointer"
                 >
                   Devis Gratuit
                 </Link>
@@ -82,7 +82,7 @@ export function Footer() {
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
-                    className="block text-sm text-slate-400 transition-colors hover:text-amber"
+                    className="block text-sm text-slate-400 transition-colors duration-200 hover:text-volt cursor-pointer"
                   >
                     {service.shortTitle}
                   </Link>
@@ -98,8 +98,8 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {COMPANY.name}. Tous droits réservés.
           </p>
           <div className="flex gap-6 text-xs text-slate-500">
-            <Link href="#" className="transition-colors duration-200 hover:text-slate-300">Mentions légales</Link>
-            <Link href="#" className="transition-colors duration-200 hover:text-slate-300">Confidentialité</Link>
+            <Link href="#" className="transition-colors duration-200 hover:text-volt cursor-pointer">Mentions légales</Link>
+            <Link href="#" className="transition-colors duration-200 hover:text-volt cursor-pointer">Confidentialité</Link>
           </div>
         </div>
       </div>

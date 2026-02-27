@@ -1,20 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk, Syne } from 'next/font/google'
+import { Outfit, Syne } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { FloatingCTA } from '@/components/layout/floating-cta'
 import { COMPANY } from '@/lib/constants'
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-outfit',
   display: 'swap',
 })
 
@@ -82,7 +76,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable} ${syne.variable}`}>
+    <html lang="fr" className={`${outfit.variable} ${syne.variable}`}>
       <head>
         <script
           type="application/ld+json"

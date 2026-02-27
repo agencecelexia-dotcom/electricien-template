@@ -33,6 +33,10 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy/80 to-navy" />
         </div>
+        {/* Volt glow orbs */}
+        <div className="pointer-events-none absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-volt/5 blur-[100px]" />
+        <div className="pointer-events-none absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-electric/10 blur-[80px]" />
+        <div className="pointer-events-none absolute left-1/2 bottom-0 h-56 w-56 rounded-full bg-volt/8 blur-[120px]" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <h1 className="mb-4 font-heading text-5xl font-extrabold text-white md:text-6xl">
             À propos de <span className="text-gradient">{COMPANY.name}</span>
@@ -45,12 +49,12 @@ export default function AboutPage() {
       </section>
 
       {/* Story + Founder */}
-      <section className="py-24">
+      <section className="bg-navy-light py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 font-heading text-4xl font-bold text-navy">Notre histoire</h2>
-              <div className="space-y-4 text-slate-600 leading-relaxed">
+              <h2 className="mb-6 font-heading text-4xl font-bold text-white">Notre histoire</h2>
+              <div className="space-y-4 text-slate-300 leading-relaxed">
                 <p>
                   Fondée il y a {COMPANY.yearsExperience} ans par Marc Durand, maître électricien passionné,
                   {COMPANY.name} est née d&apos;une vision simple : offrir des services électriques
@@ -78,8 +82,8 @@ export default function AboutPage() {
             {/* Founder card */}
             <div className="grid gap-6">
               {TEAM_MEMBERS.map((member) => (
-                <div key={member.name} className="flex items-center gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-slate-100">
+                <div key={member.name} className="glass flex items-center gap-6 rounded-2xl p-6">
+                  <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-navy">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -89,15 +93,15 @@ export default function AboutPage() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-heading text-xl font-semibold text-navy">{member.name}</h3>
+                    <h3 className="font-heading text-xl font-semibold text-white">{member.name}</h3>
                     <p className="mb-2 text-sm font-medium text-electric">{member.role}</p>
-                    <p className="text-sm text-slate-600">{member.description}</p>
+                    <p className="text-sm text-slate-300">{member.description}</p>
                   </div>
                 </div>
               ))}
 
               {/* Team group photo */}
-              <div className="relative h-64 overflow-hidden rounded-2xl bg-slate-100">
+              <div className="relative h-64 overflow-hidden rounded-2xl bg-navy">
                 <Image
                   src="/images/team/equipe-groupe.webp"
                   alt="L'équipe ÉlectroPro"
@@ -112,9 +116,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-cream py-24 circuit-pattern">
+      <section className="bg-navy py-24 circuit-pattern">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="mb-14 font-heading text-4xl font-bold text-navy md:text-5xl">
+          <h2 className="mb-14 font-heading text-4xl font-bold text-white md:text-5xl">
             Nos <span className="text-gradient-static">valeurs</span>
           </h2>
 
@@ -123,11 +127,11 @@ export default function AboutPage() {
               const Icon = value.icon
               return (
                 <div key={value.title} className="group">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-electric/10 transition-all duration-200 group-hover:scale-110 group-hover:bg-electric/20">
-                    <Icon className="h-6 w-6 text-electric" />
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-electric/10 transition-all duration-200 group-hover:scale-110 group-hover:bg-volt/10">
+                    <Icon className="h-6 w-6 text-electric transition-colors duration-200 group-hover:text-volt" />
                   </div>
-                  <h3 className="mb-2 font-heading font-semibold text-navy">{value.title}</h3>
-                  <p className="text-sm text-slate-600">{value.description}</p>
+                  <h3 className="mb-2 font-heading font-semibold text-white">{value.title}</h3>
+                  <p className="text-sm text-slate-400">{value.description}</p>
                 </div>
               )
             })}

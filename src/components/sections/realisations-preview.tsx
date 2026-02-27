@@ -12,55 +12,60 @@ export function RealisationsPreview() {
   const { ref, isVisible } = useScrollAnimation(0.1)
 
   return (
-    <section className="bg-white py-24" ref={ref}>
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-14 max-w-xl">
-          <h2 className="mb-4 font-heading text-4xl font-bold text-navy md:text-5xl">
-            Avant / <span className="text-gradient-static">Après</span>
-          </h2>
-          <p className="text-slate-600">
-            La preuve par l&apos;image. Jugez par vous-même.
-          </p>
-        </div>
+    <>
+      {/* Electric divider before section */}
+      <div className="divider-electric" />
 
-        <div className="grid gap-10 md:grid-cols-2">
-          {REALISATIONS.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: index * 0.15, duration: 0.5 }}
-            >
-              <BeforeAfterSlider
-                beforeImage={project.beforeImage}
-                afterImage={project.afterImage}
-              />
-              <div className="mt-4">
-                <h3 className="mb-2 font-heading text-xl font-semibold text-navy">
-                  {project.title}
-                </h3>
-                <p className="mb-3 text-sm text-slate-600">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="electric">{tag}</Badge>
-                  ))}
+      <section className="noise-overlay relative bg-white py-24" ref={ref}>
+        <div className="relative z-10 mx-auto max-w-7xl px-4">
+          <div className="mb-14 max-w-xl">
+            <h2 className="mb-4 font-heading text-4xl font-bold text-navy md:text-5xl">
+              Avant / <span className="text-gradient">Après</span>
+            </h2>
+            <p className="text-slate-600">
+              La preuve par l&apos;image. Jugez par vous-même.
+            </p>
+          </div>
+
+          <div className="grid gap-10 md:grid-cols-2">
+            {REALISATIONS.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
+              >
+                <BeforeAfterSlider
+                  beforeImage={project.beforeImage}
+                  afterImage={project.afterImage}
+                />
+                <div className="mt-4">
+                  <h3 className="mb-2 font-heading text-xl font-semibold text-navy">
+                    {project.title}
+                  </h3>
+                  <p className="mb-3 text-sm text-slate-600">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="electric">{tag}</Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
 
-        <div className="mt-12 text-center">
-          <Button
-            href="/realisations"
-            variant="outline"
-            size="lg"
-            iconRight={<ArrowRight className="h-5 w-5" />}
-          >
-            Voir toutes nos réalisations
-          </Button>
+          <div className="mt-12 text-center">
+            <Button
+              href="/realisations"
+              variant="outline-volt"
+              size="lg"
+              iconRight={<ArrowRight className="h-5 w-5" />}
+            >
+              Voir toutes nos réalisations
+            </Button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

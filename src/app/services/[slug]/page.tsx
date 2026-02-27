@@ -69,7 +69,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-b from-navy/80 to-navy" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4">
-          <Link href="/services" className="mb-6 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-200 hover:text-white">
+          <Link href="/services" className="mb-6 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-200 hover:text-white cursor-pointer">
             <ArrowLeft className="h-4 w-4" /> Tous les services
           </Link>
           <div className="flex items-center gap-4">
@@ -85,25 +85,25 @@ export default async function ServiceDetailPage({ params }: Props) {
       </section>
 
       {/* Content */}
-      <section className="py-16">
+      <section className="bg-navy-light py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-12 lg:grid-cols-3">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
               {/* Description */}
               <div>
-                <h2 className="mb-4 text-2xl font-bold text-slate-800">À Propos de ce Service</h2>
-                <p className="leading-relaxed text-slate-600">{service.longDescription}</p>
+                <h2 className="mb-4 text-2xl font-bold text-white">À Propos de ce Service</h2>
+                <p className="leading-relaxed text-slate-300">{service.longDescription}</p>
               </div>
 
               {/* Features */}
               <div>
-                <h2 className="mb-6 text-2xl font-bold text-slate-800">Ce Qui Est Inclus</h2>
+                <h2 className="mb-6 text-2xl font-bold text-white">Ce Qui Est Inclus</h2>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {service.features.map((feature) => (
-                    <div key={feature} className="flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50 p-4 transition-all duration-200 hover:border-electric/20 hover:shadow-sm">
+                    <div key={feature} className="glass-dark flex items-start gap-3 rounded-xl p-4 transition-all duration-200 hover:border-electric/20 hover:shadow-sm">
                       <Check className="mt-0.5 h-5 w-5 shrink-0 text-electric" />
-                      <span className="text-sm text-slate-700">{feature}</span>
+                      <span className="text-sm text-slate-300">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -111,12 +111,12 @@ export default async function ServiceDetailPage({ params }: Props) {
 
               {/* Benefits */}
               <div>
-                <h2 className="mb-6 text-2xl font-bold text-slate-800">Vos Avantages</h2>
+                <h2 className="mb-6 text-2xl font-bold text-white">Vos Avantages</h2>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {service.benefits.map((benefit) => (
                     <div key={benefit} className="flex items-center gap-3">
-                      <div className="h-2 w-2 shrink-0 rounded-full bg-amber" />
-                      <span className="text-slate-700">{benefit}</span>
+                      <div className="h-2 w-2 shrink-0 rounded-full bg-volt" />
+                      <span className="text-slate-300">{benefit}</span>
                     </div>
                   ))}
                 </div>
@@ -124,16 +124,16 @@ export default async function ServiceDetailPage({ params }: Props) {
 
               {/* Process */}
               <div>
-                <h2 className="mb-6 text-2xl font-bold text-slate-800">Notre Processus</h2>
+                <h2 className="mb-6 text-2xl font-bold text-white">Notre Processus</h2>
                 <div className="space-y-6">
                   {service.process.map((step) => (
                     <div key={step.step} className="flex gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-electric font-display text-lg font-bold text-white">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-electric font-heading text-lg font-bold text-white">
                         {step.step}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-slate-800">{step.title}</h3>
-                        <p className="mt-1 text-sm text-slate-600">{step.description}</p>
+                        <h3 className="font-semibold text-white">{step.title}</h3>
+                        <p className="mt-1 text-sm text-slate-300">{step.description}</p>
                       </div>
                     </div>
                   ))}
@@ -144,12 +144,12 @@ export default async function ServiceDetailPage({ params }: Props) {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* CTA Card */}
-              <div className="sticky top-24 rounded-2xl border border-electric/20 bg-navy p-6 text-white">
+              <div className="glass-dark sticky top-24 rounded-2xl p-6 text-white">
                 <h3 className="mb-2 text-xl font-semibold">Besoin de ce service ?</h3>
                 <p className="mb-6 text-sm text-slate-400">
                   Devis gratuit et sans engagement. Réponse sous 24h.
                 </p>
-                <Button href="/devis" variant="secondary" size="lg" className="mb-3 w-full" iconRight={<ArrowRight className="h-5 w-5" />}>
+                <Button href="/devis" variant="volt" size="lg" className="mb-3 w-full" iconRight={<ArrowRight className="h-5 w-5" />}>
                   Devis Gratuit
                 </Button>
                 <Button href={COMPANY.phoneHref} variant="outline-white" size="md" className="w-full">
@@ -168,9 +168,9 @@ export default async function ServiceDetailPage({ params }: Props) {
       </section>
 
       {/* Related Services */}
-      <section className="border-t border-slate-100 bg-slate-50 py-16">
+      <section className="border-t border-white/5 bg-navy py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="mb-8 font-heading text-2xl font-bold text-navy">Services Associés</h2>
+          <h2 className="mb-8 font-heading text-2xl font-bold text-white">Services Associés</h2>
           <div className="grid gap-6 sm:grid-cols-3">
             {relatedServices.map((related) => {
               const RelatedIcon = related.icon
@@ -178,14 +178,14 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <Link
                   key={related.slug}
                   href={`/services/${related.slug}`}
-                  className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+                  className="group glass flex cursor-pointer items-center gap-4 rounded-xl p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-electric/10"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-electric/10">
                     <RelatedIcon className="h-6 w-6 text-electric" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800 transition-colors duration-200 group-hover:text-electric">{related.title}</h3>
-                    <p className="text-xs text-slate-500 line-clamp-1">{related.description}</p>
+                    <h3 className="font-semibold text-white transition-colors duration-200 group-hover:text-electric">{related.title}</h3>
+                    <p className="text-xs text-slate-400 line-clamp-1">{related.description}</p>
                   </div>
                 </Link>
               )

@@ -8,7 +8,7 @@ import { submitContactForm } from '@/lib/actions'
 import { Input, Textarea } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Send, CheckCircle } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContactForm, null)
@@ -24,11 +24,11 @@ export function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center"
+        className="rounded-2xl border border-volt/20 bg-volt/5 p-8 text-center"
       >
-        <CheckCircle className="mx-auto mb-4 h-12 w-12 text-green-500" />
-        <h3 className="mb-2 text-xl font-semibold text-green-800">Message envoyé !</h3>
-        <p className="text-green-600">{state.message}</p>
+        <CheckCircle className="mx-auto mb-4 h-12 w-12 text-volt" />
+        <h3 className="mb-2 text-xl font-semibold text-white">Message envoyé !</h3>
+        <p className="text-slate-300">{state.message}</p>
       </motion.div>
     )
   }
@@ -68,7 +68,7 @@ export function ContactForm() {
         error={errors.message?.message || (state && !state.success ? state.errors?.message?.[0] : undefined)}
         {...register('message')}
       />
-      <Button type="submit" loading={isPending} size="lg" className="w-full" icon={<Send className="h-5 w-5" />}>
+      <Button type="submit" variant="volt" loading={isPending} size="lg" className="w-full" icon={<Send className="h-5 w-5" />}>
         Envoyer le message
       </Button>
     </form>

@@ -9,19 +9,22 @@ interface CounterProps {
   suffix?: string
   label: string
   className?: string
+  numberClassName?: string
+  suffixClassName?: string
+  labelClassName?: string
 }
 
-export function Counter({ end, suffix = '', label, className }: CounterProps) {
+export function Counter({ end, suffix = '', label, className, numberClassName, suffixClassName, labelClassName }: CounterProps) {
   const { ref, isVisible } = useScrollAnimation(0.3)
   const count = useCounter(end, 2000, 0, isVisible)
 
   return (
     <div ref={ref} className={cn('text-center', className)}>
-      <div className="font-heading text-5xl font-extrabold text-navy md:text-6xl">
+      <div className={cn('font-heading text-5xl font-extrabold text-volt md:text-6xl', numberClassName)}>
         {count}
-        <span className="text-electric">{suffix}</span>
+        <span className={cn('text-electric', suffixClassName)}>{suffix}</span>
       </div>
-      <p className="mt-1 text-sm text-slate-500">{label}</p>
+      <p className={cn('mt-1 text-sm text-slate-400', labelClassName)}>{label}</p>
     </div>
   )
 }

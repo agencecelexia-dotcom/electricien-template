@@ -13,8 +13,8 @@ export default function RealisationsPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="bg-navy py-20 pt-32">
-        <div className="mx-auto max-w-7xl px-4">
+      <section className="noise-overlay relative bg-navy py-20 pt-32">
+        <div className="relative z-10 mx-auto max-w-7xl px-4">
           <h1 className="mb-4 font-heading text-5xl font-extrabold text-white md:text-6xl">
             Avant / <span className="text-gradient">Après</span>
           </h1>
@@ -25,7 +25,7 @@ export default function RealisationsPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-24">
+      <section className="bg-navy-light py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-12 md:grid-cols-2">
             {REALISATIONS.map((project) => (
@@ -35,13 +35,13 @@ export default function RealisationsPage() {
                   afterImage={project.afterImage}
                 />
                 <div>
-                  <h2 className="mb-2 font-heading text-xl font-semibold text-navy">
+                  <h2 className="mb-2 font-heading text-xl font-semibold text-white">
                     {project.title}
                   </h2>
-                  <p className="mb-3 text-slate-600">{project.description}</p>
+                  <p className="mb-3 text-slate-300">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="electric">{tag}</Badge>
+                      <Badge key={tag} variant="white">{tag}</Badge>
                     ))}
                   </div>
                 </div>

@@ -15,9 +15,9 @@ export function WhyChooseUs() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: 'easeOut' as const }}
           >
-            <h2 className="font-heading text-4xl font-bold text-navy md:text-5xl lg:text-6xl">
+            <h2 className="scan-line font-heading text-4xl font-bold text-navy md:text-5xl lg:text-6xl">
               Pourquoi
               <br />
               <span className="text-gradient-static">nous choisir ?</span>
@@ -37,19 +37,19 @@ export function WhyChooseUs() {
                   key={item.title}
                   initial={{ opacity: 0, x: 20 }}
                   animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: index * 0.12, duration: 0.5 }}
-                  className="group flex gap-5"
+                  transition={{ delay: index * 0.12, duration: 0.5, ease: 'easeOut' as const }}
+                  className="group flex gap-5 cursor-pointer"
                 >
                   {/* Metric column */}
                   <div className="flex w-20 shrink-0 flex-col items-center">
-                    <span className="font-heading text-3xl font-extrabold text-navy transition-colors duration-200 group-hover:text-electric">
+                    <span className="font-heading text-3xl font-extrabold text-volt transition-colors duration-200 group-hover:text-electric">
                       {item.metric}
                     </span>
                     <span className="text-xs text-slate-500">{item.metricLabel}</span>
                   </div>
 
                   {/* Separator */}
-                  <div className="w-px bg-electric/20 transition-all duration-200 group-hover:w-0.5 group-hover:bg-electric/50" />
+                  <div className="w-px bg-volt/30 transition-all duration-200 group-hover:w-0.5 group-hover:bg-volt" />
 
                   {/* Content */}
                   <div>

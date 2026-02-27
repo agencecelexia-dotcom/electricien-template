@@ -9,11 +9,13 @@ const variants = {
   primary: 'bg-electric hover:bg-electric-dark text-white shadow-lg hover:shadow-electric/25',
   secondary: 'bg-amber hover:bg-amber-dark text-navy font-semibold shadow-lg hover:shadow-amber/25',
   outline: 'border-2 border-electric text-electric hover:bg-electric hover:text-white',
-  ghost: 'text-slate-600 hover:text-electric hover:bg-slate-100',
+  ghost: 'text-slate-400 hover:text-volt hover:bg-white/5',
   emergency: 'bg-red-600 hover:bg-red-700 text-white shadow-lg animate-pulse-glow',
   cta: 'bg-gradient-to-r from-electric to-electric-dark text-white shadow-xl hover:shadow-electric/30',
-  'outline-white': 'border-2 border-white text-white hover:bg-white hover:text-navy',
+  'outline-white': 'border-2 border-white/30 text-white hover:border-white hover:bg-white/10',
   glow: 'bg-electric text-white shadow-lg btn-glow',
+  volt: 'bg-volt text-navy font-bold shadow-lg hover:shadow-volt/25 btn-glow',
+  'outline-volt': 'border-2 border-volt text-volt hover:bg-volt hover:text-navy',
 }
 
 const sizes = {
@@ -51,7 +53,7 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-300 cursor-pointer',
+    'inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200 cursor-pointer',
     variants[variant],
     sizes[size],
     (disabled || loading) && 'opacity-50 cursor-not-allowed',
