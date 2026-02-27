@@ -1,0 +1,23 @@
+export const images = {
+  heroes: {
+    accueil: '/images/heroes/accueil.webp',
+  },
+  services: {
+    'installation-electrique': '/images/services/installation-electrique.webp',
+    'renovation-electrique': '/images/services/renovation-electrique.webp',
+    'depannage-urgence': '/images/services/depannage-urgence.webp',
+    'mise-aux-normes': '/images/services/mise-aux-normes.webp',
+    'domotique-maison-connectee': '/images/services/domotique-maison-connectee.webp',
+    'eclairage': '/images/services/eclairage.webp',
+  },
+  realisations: {
+    'projet-1-avant': '/images/realisations/projet-1-avant.webp',
+    'projet-1-apres': '/images/realisations/projet-1-apres.webp',
+    'projet-2-avant': '/images/realisations/projet-2-avant.webp',
+    'projet-2-apres': '/images/realisations/projet-2-apres.webp',
+  },
+  team: {
+    fondateur: '/images/team/equipe-fondateur.webp',
+  },
+  og: '/images/og-image.webp',
+} as const

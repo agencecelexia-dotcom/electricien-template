@@ -1,0 +1,105 @@
+# Configuration Client — ÉlectroPro
+
+## IDENTITE
+NOM_ENTREPRISE: "ÉlectroPro"
+NOM_LEGAL: "ÉlectroPro SARL"
+SIRET: "123 456 789 00012"
+METIER: "Électricien"
+FONDATEUR: "Marc Durand"
+GENRE_DIRIGEANT: "M"
+ANNEES_EXPERIENCE: "15"
+ANNEE_CREATION: "2009"
+
+## CONTACT
+TELEPHONE: "01 23 45 67 89"
+TELEPHONE_HREF: "tel:+33123456789"
+EMAIL: "contact@electropro.fr"
+ADRESSE: "15 Rue Voltaire"
+CODE_POSTAL: "75011"
+VILLE: "Paris"
+DEPARTEMENT: "Paris"
+REGION: "Île-de-France"
+ZONE_INTERVENTION: "Paris et Île-de-France"
+ZONE_KM: "50"
+LATITUDE: "48.8566"
+LONGITUDE: "2.3522"
+WHATSAPP: "https://wa.me/33123456789"
+
+## HORAIRES
+HORAIRES_SEMAINE: "Lun-Ven: 8h-19h"
+HORAIRES_SAMEDI: "Sur rendez-vous"
+HORAIRES_DIMANCHE: "Urgences uniquement"
+URGENCE: "24/7"
+
+## BRANDING
+PRIMARY_HUE: "217"
+ACCENT_HUE: "44"
+
+## SEO
+DOMAINE: "https://electropro.fr"
+META_TITLE_ACCUEIL: "ÉlectroPro — Électricien Certifié Paris | Installation & Dépannage 24/7"
+META_DESC_ACCUEIL: "Électricien certifié Qualifelec à Paris. Installation, rénovation, dépannage 24/7. Devis gratuit et intervention rapide."
+META_KEYWORDS: "électricien, paris, installation électrique, dépannage, rénovation, mise aux normes, domotique"
+SCHEMA_TYPE: "Electrician"
+
+## CONTENU
+SLOGAN: "L'électricité, autrement."
+HERO_TITRE: "Votre électricien de confiance à Paris"
+DESCRIPTION_ENTREPRISE: "Électricien certifié à Paris et Île-de-France. Installation, rénovation, dépannage électrique 24/7."
+DESCRIPTION_FOOTER: "Entreprise d'électricité certifiée intervenant à Paris et en Île-de-France depuis 2009."
+DESCRIPTION_A_PROPOS: "Fondée en 2009, ÉlectroPro est une entreprise d'électricité certifiée Qualifelec et RGE, spécialisée dans l'installation, la rénovation et le dépannage électrique."
+
+## CHIFFRES
+NOMBRE_INTERVENTIONS: "2500"
+NOTE_GOOGLE: "4.9"
+NOMBRE_AVIS: "250"
+DELAI_INTERVENTION: "30"
+DISPONIBILITE: "24/7"
+TAUX_SATISFACTION: "98"
+
+## SERVICES
+SERVICE_1_TITRE: "Installation Électrique"
+SERVICE_1_DESC: "On câble votre habitat de A à Z. Tableau, prises, éclairage — tout aux normes NF C 15-100, certifié Consuel."
+SERVICE_2_TITRE: "Rénovation Électrique"
+SERVICE_2_DESC: "Votre installation a 15 ans ? On la modernise sans tout casser. Travaux propres, résultat aux normes."
+SERVICE_3_TITRE: "Dépannage & Urgence"
+SERVICE_3_DESC: "Panne à 3h du matin ? On est là. Intervention en moins de 30 minutes, diagnostic immédiat sur place."
+SERVICE_4_TITRE: "Mise aux Normes"
+SERVICE_4_DESC: "Vente, location ou simple tranquillité ? On vérifie, on corrige, on certifie. NF C 15-100 garanti."
+SERVICE_5_TITRE: "Domotique & Maison Connectée"
+SERVICE_5_DESC: "Pilotez tout du bout des doigts. Éclairage, chauffage, volets, sécurité — votre maison obéit à la voix."
+SERVICE_6_TITRE: "Éclairage"
+SERVICE_6_DESC: "On transforme vos espaces avec la lumière. Design, ambiance, économies — chaque pièce a son caractère."
+
+## RESEAUX SOCIAUX
+GOOGLE_MAPS: "https://maps.google.com/?q=15+Rue+Voltaire+75011+Paris"
+GOOGLE_REVIEWS: "#"
+FACEBOOK: "#"
+INSTAGRAM: "#"
+LINKEDIN: "#"
+
+## TEMOIGNAGES
+TEMOIGNAGE_1_NOM: "Marie D."
+TEMOIGNAGE_1_VILLE: "Paris 11e"
+TEMOIGNAGE_1_TEXTE: "Rénovation complète de notre appartement haussmannien en une semaine. Propre, rapide, sans accroc."
+TEMOIGNAGE_1_NOTE: "5"
+TEMOIGNAGE_2_NOM: "Jean-Pierre M."
+TEMOIGNAGE_2_VILLE: "Boulogne"
+TEMOIGNAGE_2_TEXTE: "Du premier contact au Consuel, tout était carré. Ils ont câblé toute la maison sans un retard."
+TEMOIGNAGE_2_NOTE: "5"
+TEMOIGNAGE_3_NOM: "Sophie L."
+TEMOIGNAGE_3_VILLE: "Vincennes"
+TEMOIGNAGE_3_TEXTE: "Notre maison obéit au doigt et à la voix. Éclairage, volets, chauffage — tout se pilote depuis le canapé."
+TEMOIGNAGE_3_NOTE: "5"
+
+## ZONES
+ZONES_LISTE: "Paris,Boulogne-Billancourt,Neuilly-sur-Seine,Levallois-Perret,Montreuil,Saint-Denis,Vincennes,Créteil"
+
+## HEBERGEMENT
+HEBERGEUR: "Vercel Inc."
+HEBERGEUR_ADRESSE: "440 N Barranca Ave #4133, Covina, CA 91723, USA"
+HEBERGEUR_SITE: "https://vercel.com"
+
+## INTEGRATIONS
+N8N_WEBHOOK: ""
+ADMIN_PASSWORD: "1234"

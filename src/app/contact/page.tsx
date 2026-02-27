@@ -89,6 +89,25 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Google Map */}
+      <section className="py-12">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="font-heading text-2xl font-bold text-slate-900 mb-6">Nous trouver</h2>
+          <div className="overflow-hidden rounded-xl border border-slate-200">
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(COMPANY.address)}`}
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localisation ÉlectroPro"
+            />
+          </div>
+        </div>
+      </section>
     </>
   )
 }

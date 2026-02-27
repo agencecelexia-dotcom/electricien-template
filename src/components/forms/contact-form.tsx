@@ -35,6 +35,8 @@ export function ContactForm() {
 
   return (
     <form action={formAction} className="space-y-5">
+      {/* Honeypot field */}
+      <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
       <div className="grid gap-5 md:grid-cols-2">
         <Input
           label="Nom complet"
@@ -68,6 +70,16 @@ export function ContactForm() {
         error={errors.message?.message || (state && !state.success ? state.errors?.message?.[0] : undefined)}
         {...register('message')}
       />
+      {/* RGPD Consent */}
+      <label className="flex items-start gap-2 cursor-pointer">
+        <input type="checkbox" required className="mt-1 h-4 w-4 rounded border-slate-300 text-electric focus:ring-electric" />
+        <span className="text-xs text-slate-500">
+          J&apos;accepte que mes données soient traitées conformément à la{' '}
+          <a href="/politique-confidentialite" className="text-electric underline" target="_blank">
+            politique de confidentialité
+          </a>.
+        </span>
+      </label>
       <Button type="submit" variant="primary" loading={isPending} size="lg" className="w-full" icon={<Send className="h-5 w-5" />}>
         Envoyer le message
       </Button>

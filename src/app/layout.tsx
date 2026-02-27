@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
-import { Outfit } from 'next/font/google'
+import { Nunito_Sans } from 'next/font/google'
 import './globals.css'
-import { Header } from '@/components/layout/header'
-import { Footer } from '@/components/layout/footer'
-import { FloatingCTA } from '@/components/layout/floating-cta'
-import { LightningBackground } from '@/components/ui/lightning-background'
+import { LayoutShell } from '@/components/layout/LayoutShell'
+import { CookieBanner } from '@/components/ui/CookieBanner'
+import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { COMPANY } from '@/lib/constants'
 
-const outfit = Outfit({
+const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
-  variable: '--font-outfit',
+  variable: '--font-nunito-sans',
   display: 'swap',
 })
 
@@ -72,7 +71,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="fr" className={outfit.variable}>
+    <html lang="fr" className={nunitoSans.variable}>
       <head>
         <script
           type="application/ld+json"
@@ -80,11 +79,11 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <LightningBackground />
-        <Header />
-        <main className="relative z-10">{children}</main>
-        <Footer />
-        <FloatingCTA />
+        <LayoutShell>
+          {children}
+        </LayoutShell>
+        <ScrollProgress />
+        <CookieBanner />
       </body>
     </html>
   )
