@@ -1,6 +1,6 @@
 export const images = {
   heroes: {
-    accueil: '/images/heroes/accueil.webp',
+    accueil: '/images/hero/accueil.webp',
   },
   services: {
     'installation-electrique': '/images/services/installation-electrique.webp',
