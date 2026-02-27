@@ -39,17 +39,16 @@ export function ServicesOverview() {
               >
                 <Link href={`/services/${service.slug}`} className="group relative block h-full cursor-pointer">
                   <div className={`relative flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-200 group-hover:-translate-y-1 group-hover:border-electric/30 group-hover:shadow-md ${isLarge ? 'min-h-[400px]' : 'min-h-[180px]'}`}>
-                    {/* Background image for large cards */}
+                    {/* Image for large cards */}
                     {isLarge && (
-                      <div className="absolute inset-0">
+                      <div className="relative h-52 shrink-0 overflow-hidden">
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
-                          className="object-cover opacity-15 transition-opacity duration-500 group-hover:opacity-20"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
                           sizes="(max-width: 1024px) 100vw, 33vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
                       </div>
                     )}
 
