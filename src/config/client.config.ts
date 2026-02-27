@@ -1,5 +1,6 @@
 // AUTO-GENERATED from CLIENT.md — NE PAS MODIFIER MANUELLEMENT
 // Genere par: npm run sync-client
+// Date: 2026-02-27T23:14:37.284Z
 
 export const clientConfig = {
   NOM_ENTREPRISE: 'ÉlectroPro',

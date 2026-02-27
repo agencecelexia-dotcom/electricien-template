@@ -32,7 +32,8 @@
       "Bash(git add public/images/ src/config/images.ts)",
       "Bash(git add src/app/a-propos/page.tsx src/components/layout/footer.tsx src/components/layout/header.tsx src/components/sections/hero.tsx src/config/images.ts src/data/projects.ts src/lib/constants.ts storage/services.json storage/testimonials.json storage/projects.json)",
       "Bash(git add public/images/realisations/projet-3-avant.webp public/images/realisations/projet-3-apres.webp public/images/realisations/projet-4-avant.webp public/images/realisations/projet-4-apres.webp public/images/realisations/projet-5-avant.webp public/images/realisations/projet-5-apres.webp public/images/realisations/projet-6-avant.webp public/images/realisations/projet-6-apres.webp)",
-      "Bash(git add src/components/sections/services-overview.tsx)"
+      "Bash(git add src/components/sections/services-overview.tsx)",
+      "Bash(npm run sync-client)"
     ]
   }
 }
