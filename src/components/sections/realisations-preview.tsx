@@ -24,7 +24,7 @@ export function RealisationsPreview() {
         </div>
 
         <div className="grid gap-10 md:grid-cols-2">
-          {REALISATIONS.map((project, index) => (
+          {REALISATIONS.slice(0, 2).map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}

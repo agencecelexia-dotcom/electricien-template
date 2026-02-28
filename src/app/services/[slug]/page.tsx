@@ -144,21 +144,21 @@ export default async function ServiceDetailPage({ params }: Props) {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* CTA Card */}
-              <div className="bg-electric/5 border border-electric/20 rounded-2xl p-6 sticky top-24">
+              <div className="bg-gradient-to-br from-electric/10 to-electric/5 border border-electric/30 rounded-2xl p-6 sticky top-24 shadow-sm">
                 <h3 className="mb-2 text-xl font-semibold text-slate-900">Besoin de ce service ?</h3>
-                <p className="mb-6 text-sm text-slate-600">
+                <p className="mb-6 text-sm text-slate-700 font-medium">
                   Devis gratuit et sans engagement. Réponse sous 24h.
                 </p>
                 <Button href="/devis" variant="primary" size="lg" className="mb-3 w-full" iconRight={<ArrowRight className="h-5 w-5" />}>
                   Devis Gratuit
                 </Button>
-                <Button href={COMPANY.phoneHref} variant="outline-white" size="md" className="w-full">
+                <Button href={COMPANY.phoneHref} variant="outline" size="md" className="w-full border-electric/30 text-electric hover:bg-electric/5">
                   {COMPANY.phone}
                 </Button>
 
-                <div className="mt-6 space-y-3 border-t border-electric/10 pt-6">
+                <div className="mt-6 space-y-3 border-t border-electric/20 pt-6">
                   {COMPANY.certifications.map((cert) => (
-                    <Badge key={cert} variant="white">{cert}</Badge>
+                    <Badge key={cert} variant="secondary">{cert}</Badge>
                   ))}
                 </div>
               </div>
