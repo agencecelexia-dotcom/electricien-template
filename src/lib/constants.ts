@@ -268,24 +268,6 @@ export const TESTIMONIALS = [
     rating: parseInt(clientConfig.TEMOIGNAGE_3_NOTE),
     text: clientConfig.TEMOIGNAGE_3_TEXTE,
   },
-  {
-    id: 4,
-    name: 'Isabelle M.',
-    initials: 'IM',
-    location: 'Saint-Mandé',
-    service: 'Éclairage',
-    rating: 5,
-    text: 'Des ambiances différentes pour chaque moment. Le salon a changé de personnalité. Bluffant.',
-  },
-  {
-    id: 5,
-    name: 'Robert P.',
-    initials: 'RP',
-    location: 'Montreuil',
-    service: 'Urgence',
-    rating: 5,
-    text: 'Panne un dimanche soir, technicien là en 25 minutes. Problème réglé en une heure. Sérieux.',
-  },
 ]
 
 export const FAQ_ITEMS = [
@@ -321,20 +303,8 @@ export const FAQ_ITEMS = [
 
 export const SERVICE_AREAS = [
   {
-    department: 'Paris',
-    cities: ['Paris 1er - 20e', 'Tous arrondissements'],
-  },
-  {
-    department: 'Hauts-de-Seine (92)',
-    cities: ['Boulogne-Billancourt', 'Neuilly-sur-Seine', 'Levallois-Perret', 'Issy-les-Moulineaux', 'Nanterre'],
-  },
-  {
-    department: 'Seine-Saint-Denis (93)',
-    cities: ['Montreuil', 'Saint-Denis', 'Bobigny', 'Pantin', 'Aubervilliers'],
-  },
-  {
-    department: 'Val-de-Marne (94)',
-    cities: ['Créteil', 'Vincennes', 'Saint-Mandé', 'Charenton-le-Pont', 'Maisons-Alfort'],
+    department: clientConfig.DEPARTEMENT,
+    cities: clientConfig.ZONES_LISTE.split(','),
   },
 ]
 
@@ -397,9 +367,9 @@ export const REALISATIONS = [
 
 export const TEAM_MEMBERS = [
   {
-    name: 'Marc Durand',
+    name: clientConfig.FONDATEUR,
     role: 'Fondateur & Maître Électricien',
-    description: '15 ans d\'expérience dans l\'électricité résidentielle et commerciale. Certifié Qualifelec et formateur.',
+    description: `${clientConfig.ANNEES_EXPERIENCE} ans d'expérience dans l'électricité résidentielle et commerciale. Certifié Qualifelec et formateur.`,
     image: '/images/team/equipe-fondateur.webp',
   },
 ]

@@ -2,6 +2,7 @@
 
 import { MapPin } from 'lucide-react'
 import { SERVICE_AREAS, COMPANY } from '@/lib/constants'
+import { clientConfig } from '@/config/client.config'
 import { Badge } from '@/components/ui/badge'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/hooks/use-scroll-animation'
@@ -18,8 +19,8 @@ export function ServiceArea() {
           </h2>
           <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-electric" />
           <p className="mx-auto max-w-2xl text-slate-600">
-            Nous intervenons à Paris et dans toute l&apos;Île-de-France,
-            dans un rayon de 50 km.
+            Nous intervenons à {clientConfig.VILLE} et {clientConfig.ZONE_INTERVENTION},
+            dans un rayon de {clientConfig.ZONE_KM} km.
           </p>
         </div>
 
@@ -48,7 +49,7 @@ export function ServiceArea() {
             <div className="rounded-xl border border-amber/20 bg-amber/5 p-4">
               <p className="flex items-center gap-2 text-sm font-medium text-amber-dark">
                 <MapPin className="h-4 w-4" />
-                Intervention dans un rayon de 50 km autour de Paris
+                Intervention dans un rayon de {clientConfig.ZONE_KM} km autour de {clientConfig.VILLE}
               </p>
             </div>
           </motion.div>
@@ -62,7 +63,7 @@ export function ServiceArea() {
           >
             <div className="text-center">
               <MapPin className="mx-auto mb-4 h-16 w-16 text-electric/30" />
-              <p className="text-lg font-semibold text-slate-600">Paris & Île-de-France</p>
+              <p className="text-lg font-semibold text-slate-600">{clientConfig.VILLE} & {clientConfig.ZONE_INTERVENTION}</p>
               <p className="mt-1 text-sm text-slate-500">{COMPANY.address}</p>
               <p className="mt-4 text-xs text-slate-400">
                 Carte interactive disponible prochainement

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { COMPANY } from '@/lib/constants'
+import { clientConfig } from '@/config/client.config'
 
 export const metadata: Metadata = {
   title: 'Mentions Légales',
@@ -11,14 +13,14 @@ const sections = [
     title: 'Éditeur du site',
     content: (
       <>
-        <p>Le site <strong>electropro.fr</strong> est édité par :</p>
+        <p>Le site <strong>{clientConfig.DOMAINE}</strong> est édité par :</p>
         <ul className="mt-3 list-none space-y-1">
-          <li><strong>Raison sociale :</strong> ÉlectroPro SARL</li>
-          <li><strong>SIRET :</strong> 123 456 789 00012</li>
-          <li><strong>Siège social :</strong> 15 Rue Voltaire, 75011 Paris</li>
-          <li><strong>Téléphone :</strong> 01 23 45 67 89</li>
-          <li><strong>Email :</strong> contact@electropro.fr</li>
-          <li><strong>Directeur de la publication :</strong> Marc Durand</li>
+          <li><strong>Raison sociale :</strong> {clientConfig.NOM_LEGAL}</li>
+          <li><strong>SIRET :</strong> {clientConfig.SIRET}</li>
+          <li><strong>Siège social :</strong> {clientConfig.ADRESSE}, {clientConfig.CODE_POSTAL} {clientConfig.VILLE}</li>
+          <li><strong>Téléphone :</strong> {COMPANY.phone}</li>
+          <li><strong>Email :</strong> {COMPANY.email}</li>
+          <li><strong>Directeur de la publication :</strong> {clientConfig.FONDATEUR}</li>
         </ul>
       </>
     ),
@@ -29,17 +31,17 @@ const sections = [
       <>
         <p>Le site est hébergé par :</p>
         <ul className="mt-3 list-none space-y-1">
-          <li><strong>Vercel Inc.</strong></li>
-          <li>440 N Barranca Ave #4133, Covina, CA 91723, USA</li>
+          <li><strong>{clientConfig.HEBERGEUR}</strong></li>
+          <li>{clientConfig.HEBERGEUR_ADRESSE}</li>
           <li>
             Site web :{' '}
             <a
-              href="https://vercel.com"
+              href={clientConfig.HEBERGEUR_SITE}
               target="_blank"
               rel="noopener noreferrer"
               className="text-electric underline hover:text-electric-dark"
             >
-              https://vercel.com
+              {clientConfig.HEBERGEUR_SITE}
             </a>
           </li>
         </ul>
@@ -51,13 +53,13 @@ const sections = [
     content: (
       <p>
         L&apos;ensemble du contenu de ce site (textes, images, logos, graphismes,
-        icônes, sons, logiciels, etc.) est la propriété exclusive d&apos;ÉlectroPro
-        SARL ou de ses partenaires et est protégé par les lois françaises et
+        icônes, sons, logiciels, etc.) est la propriété exclusive de {COMPANY.name}
+        ou de ses partenaires et est protégé par les lois françaises et
         internationales relatives à la propriété intellectuelle. Toute
         reproduction, représentation, modification, publication, adaptation de
         tout ou partie des éléments du site, quel que soit le moyen ou le
         procédé utilisé, est interdite sans l&apos;autorisation écrite préalable
-        d&apos;ÉlectroPro SARL.
+        de {COMPANY.name}.
       </p>
     ),
   },
@@ -66,7 +68,7 @@ const sections = [
     content: (
       <>
         <p>
-          ÉlectroPro SARL s&apos;efforce de fournir sur le site des informations
+          {COMPANY.name} s&apos;efforce de fournir sur le site des informations
           aussi précises que possible. Toutefois, la société ne pourra être tenue
           responsable des omissions, des inexactitudes et des carences dans la
           mise à jour, qu&apos;elles soient de son fait ou du fait des tiers
@@ -162,7 +164,7 @@ export default function MentionsLegalesPage() {
             Mentions <span className="text-electric">Légales</span>
           </h1>
           <p className="mx-auto max-w-2xl text-slate-600">
-            Informations légales relatives au site electropro.fr
+            Informations légales relatives au site {clientConfig.DOMAINE}
           </p>
         </div>
       </section>

@@ -5,6 +5,7 @@ import { LayoutShell } from '@/components/layout/LayoutShell'
 import { CookieBanner } from '@/components/ui/CookieBanner'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { COMPANY } from '@/lib/constants'
+import { clientConfig } from '@/config/client.config'
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -15,27 +16,27 @@ const nunitoSans = Nunito_Sans({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://electropro.fr'),
+  metadataBase: new URL(`https://${clientConfig.DOMAINE}`),
   title: {
-    default: `${COMPANY.name} — Électricien Certifié Paris | Installation & Dépannage 24/7`,
+    default: `${COMPANY.name} — Électricien Certifié ${clientConfig.VILLE} | Installation & Dépannage 24/7`,
     template: `%s | ${COMPANY.name}`,
   },
-  description: `Électricien certifié Qualifelec à Paris. Installation, rénovation, dépannage 24/7. Devis gratuit et intervention rapide. +${COMPANY.projectsCompleted} projets réalisés.`,
-  keywords: ['électricien', 'paris', 'installation électrique', 'dépannage', 'rénovation', 'mise aux normes', 'domotique', 'éclairage', 'Qualifelec', 'RGE'],
+  description: `Électricien certifié Qualifelec à ${clientConfig.VILLE}. Installation, rénovation, dépannage 24/7. Devis gratuit et intervention rapide. +${COMPANY.projectsCompleted} projets réalisés.`,
+  keywords: ['électricien', clientConfig.VILLE.toLowerCase(), 'installation électrique', 'dépannage', 'rénovation', 'mise aux normes', 'domotique', 'éclairage', 'Qualifelec', 'RGE'],
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://electropro.fr',
+    url: `https://${clientConfig.DOMAINE}`,
     siteName: COMPANY.name,
-    title: `${COMPANY.name} — Électricien Certifié Paris`,
-    description: `Électricien certifié à Paris et Île-de-France. Devis gratuit, intervention rapide 24/7.`,
+    title: `${COMPANY.name} — Électricien Certifié ${clientConfig.VILLE}`,
+    description: `Électricien certifié à ${clientConfig.VILLE} et ${clientConfig.ZONE_INTERVENTION}. Devis gratuit, intervention rapide 24/7.`,
     images: [{ url: '/images/og-image.webp', width: 1200, height: 630, alt: COMPANY.name }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${COMPANY.name} — Électricien Certifié Paris`,
-    description: `Électricien certifié à Paris et Île-de-France. Devis gratuit, intervention rapide 24/7.`,
+    title: `${COMPANY.name} — Électricien Certifié ${clientConfig.VILLE}`,
+    description: `Électricien certifié à ${clientConfig.VILLE} et ${clientConfig.ZONE_INTERVENTION}. Devis gratuit, intervention rapide 24/7.`,
     images: ['/images/og-image.webp'],
   },
 }
@@ -49,25 +50,25 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Electrician',
     name: COMPANY.name,
-    description: `Électricien certifié à Paris. Installation, rénovation, dépannage électrique 24/7.`,
+    description: `Électricien certifié à ${clientConfig.VILLE}. Installation, rénovation, dépannage électrique 24/7.`,
     image: '/images/og-image.webp',
-    telephone: '+33123456789',
+    telephone: clientConfig.TELEPHONE_HREF,
     email: COMPANY.email,
-    url: 'https://electropro.fr',
+    url: `https://${clientConfig.DOMAINE}`,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '15 Rue Voltaire',
-      addressLocality: 'Paris',
-      postalCode: '75011',
+      streetAddress: clientConfig.ADRESSE,
+      addressLocality: clientConfig.VILLE,
+      postalCode: clientConfig.CODE_POSTAL,
       addressCountry: 'FR',
     },
-    geo: { '@type': 'GeoCoordinates', latitude: 48.8566, longitude: 2.3522 },
+    geo: { '@type': 'GeoCoordinates', latitude: parseFloat(clientConfig.LATITUDE), longitude: parseFloat(clientConfig.LONGITUDE) },
     openingHoursSpecification: [
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '19:00' },
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday', 'Sunday'], opens: '00:00', closes: '23:59', description: 'Urgences uniquement' },
     ],
     priceRange: '$$',
-    areaServed: { '@type': 'GeoCircle', geoMidpoint: { '@type': 'GeoCoordinates', latitude: 48.8566, longitude: 2.3522 }, geoRadius: '50000' },
+    areaServed: { '@type': 'GeoCircle', geoMidpoint: { '@type': 'GeoCoordinates', latitude: parseFloat(clientConfig.LATITUDE), longitude: parseFloat(clientConfig.LONGITUDE) }, geoRadius: `${parseInt(clientConfig.ZONE_KM) * 1000}` },
   }
 
   return (

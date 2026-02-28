@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { COMPANY } from '@/lib/constants'
+import { clientConfig } from '@/config/client.config'
 
 export const metadata: Metadata = {
   title: 'Politique de Confidentialité',
@@ -13,11 +15,11 @@ const sections = [
       <>
         <p>Le responsable du traitement des données personnelles est :</p>
         <ul className="mt-3 list-none space-y-1">
-          <li><strong>ÉlectroPro SARL</strong></li>
-          <li>15 Rue Voltaire, 75011 Paris</li>
-          <li>SIRET : 123 456 789 00012</li>
-          <li>Email : contact@electropro.fr</li>
-          <li>Téléphone : 01 23 45 67 89</li>
+          <li><strong>{COMPANY.name}</strong></li>
+          <li>{clientConfig.ADRESSE}, {clientConfig.CODE_POSTAL} {clientConfig.VILLE}</li>
+          <li>SIRET : {clientConfig.SIRET}</li>
+          <li>Email : {COMPANY.email}</li>
+          <li>Téléphone : {COMPANY.phone}</li>
         </ul>
       </>
     ),
@@ -66,7 +68,7 @@ const sections = [
         Protection des Données — RGPD). En soumettant le formulaire de contact,
         vous consentez expressément au traitement de vos données pour les
         finalités décrites ci-dessus. Vous pouvez retirer votre consentement à
-        tout moment en nous contactant à l&apos;adresse contact@electropro.fr.
+        tout moment en nous contactant à l&apos;adresse {COMPANY.email}.
       </p>
     ),
   },
@@ -88,7 +90,7 @@ const sections = [
     content: (
       <p>
         Vos données personnelles sont traitées exclusivement par le personnel
-        habilité d&apos;ÉlectroPro SARL dans le cadre de leurs fonctions.
+        habilité de {COMPANY.name} dans le cadre de leurs fonctions.
         <strong> Aucune donnée n&apos;est transmise à des tiers</strong>, vendue ou
         louée à quelque organisme que ce soit. Vos données ne font l&apos;objet
         d&apos;aucun transfert en dehors de l&apos;Union européenne.
@@ -114,13 +116,13 @@ const sections = [
         <p className="mt-3">
           Pour exercer l&apos;un de ces droits, contactez-nous par email à{' '}
           <a
-            href="mailto:contact@electropro.fr"
+            href={`mailto:${COMPANY.email}`}
             className="text-electric underline hover:text-electric-dark"
           >
-            contact@electropro.fr
+            {COMPANY.email}
           </a>{' '}
-          ou par courrier à l&apos;adresse : ÉlectroPro SARL, 15 Rue Voltaire,
-          75011 Paris.
+          ou par courrier à l&apos;adresse : {COMPANY.name}, {clientConfig.ADRESSE},
+          {clientConfig.CODE_POSTAL} {clientConfig.VILLE}.
         </p>
         <p className="mt-3">
           Nous nous engageons à répondre à votre demande dans un délai de 30
@@ -173,7 +175,7 @@ const sections = [
     title: 'Modifications de la politique',
     content: (
       <p>
-        ÉlectroPro SARL se réserve le droit de modifier la présente politique de
+{COMPANY.name} se réserve le droit de modifier la présente politique de
         confidentialité à tout moment. Les modifications prennent effet dès leur
         publication sur cette page. Nous vous invitons à consulter régulièrement
         cette page pour prendre connaissance des éventuelles mises à jour. La

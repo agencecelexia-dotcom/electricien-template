@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ArrowRight, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { COMPANY } from '@/lib/constants'
+import { clientConfig } from '@/config/client.config'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -57,7 +58,7 @@ export function Hero() {
               className="mb-10 max-w-lg text-lg leading-relaxed text-slate-600"
             >
               Installation, renovation, depannage 24/7.{' '}
-              Paris &amp; Ile-de-France — devis gratuit en 2 min.
+              {clientConfig.VILLE} &amp; {clientConfig.ZONE_INTERVENTION} — devis gratuit en 2 min.
             </motion.p>
 
             {/* CTAs */}

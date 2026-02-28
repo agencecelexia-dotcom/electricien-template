@@ -36,7 +36,17 @@
       "Bash(npm run sync-client)",
       "Bash(git clone https://github.com/agencecelexia-dotcom/electricien-AMPR-ENERGY.git)",
       "Bash(git clone --depth 1 https://github.com/agencecelexia-dotcom/electricien-AMPR-ENERGY.git ampr-energy)",
-      "Bash(grep -n \"import.*clientConfig\" /c/Users/AA/electricien-template/src/**/*.tsx)"
+      "Bash(grep -n \"import.*clientConfig\" /c/Users/AA/electricien-template/src/**/*.tsx)",
+      "Bash(git add src/lib/constants.ts)",
+      "Bash(git add -A src/lib/constants.ts)",
+      "Bash(git config core.autocrlf)",
+      "Bash(git check-attr text src/lib/constants.ts)",
+      "Bash(git reset HEAD src/lib/constants.ts)",
+      "Bash(node -e \":*)",
+      "Bash(npm install)",
+      "Bash(xargs grep -l \"electropro\\\\.fr\\\\|15 Rue Voltaire\\\\|75011\")",
+      "Bash(cat:*)",
+      "Bash(/tmp/summary.md:*)"
     ]
   }
 }
