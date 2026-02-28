@@ -158,7 +158,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
                 <div className="mt-6 space-y-3 border-t border-electric/20 pt-6">
                   {COMPANY.certifications.map((cert) => (
-                    <Badge key={cert} variant="white">{cert}</Badge>
+                    <Badge key={cert} variant="electric">{cert}</Badge>
                   ))}
                 </div>
               </div>
