@@ -42,14 +42,14 @@ export function Hero() {
               variants={itemVariants}
               className="mb-5 text-sm font-medium uppercase tracking-wider text-electric"
             >
-              Electricien certifie Qualifelec &amp; RGE
+              Électricien certifié Qualifelec &amp; RGE
             </motion.p>
 
             <motion.h1
               variants={itemVariants}
               className="mb-8 font-heading text-5xl font-extrabold leading-tight text-slate-900 sm:text-6xl"
             >
-              L&apos;electricite,{' '}
+              L&apos;électricité,{' '}
               <span className="text-electric">autrement.</span>
             </motion.h1>
 
@@ -57,7 +57,7 @@ export function Hero() {
               variants={itemVariants}
               className="mb-10 max-w-lg text-lg leading-relaxed text-slate-600"
             >
-              Installation, renovation, depannage 24/7.{' '}
+              Installation, rénovation, dépannage 24/7.{' '}
               {clientConfig.VILLE} &amp; {clientConfig.ZONE_INTERVENTION} — devis gratuit en 2 min.
             </motion.p>
 
