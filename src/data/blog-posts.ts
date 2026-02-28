@@ -1,3 +1,6 @@
+import { COMPANY } from '@/lib/constants'
+import { clientConfig } from '@/config/client.config'
+
 export type ContentBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'heading'; text: string }
@@ -64,7 +67,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         text: 'Une installation électrique aux normes, c\'est la tranquillité pour les 30 prochaines années. C\'est un investissement, pas une dépense.',
-        author: 'Marc Durand, ÉlectroPro',
+        author: `${clientConfig.FONDATEUR}, ${COMPANY.name}`,
       },
     ],
   },
@@ -167,7 +170,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         text: 'Une maison bien domotisée consomme 15 à 25% d\'énergie en moins. Le confort en plus, les factures en moins.',
-        author: 'Marc Durand, ÉlectroPro',
+        author: `${clientConfig.FONDATEUR}, ${COMPANY.name}`,
       },
       {
         type: 'heading',
@@ -278,7 +281,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         text: 'L\'éclairage représente 10 à 15% de la facture d\'électricité d\'un ménage. Passer en full LED, c\'est diviser ce poste par quatre.',
-        author: 'Marc Durand, ÉlectroPro',
+        author: `${clientConfig.FONDATEUR}, ${COMPANY.name}`,
       },
       {
         type: 'heading',
@@ -346,7 +349,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         text: 'Le solaire est un investissement rentable sur 8 à 12 ans en moyenne. Après, c\'est de l\'électricité gratuite pendant 15 à 20 ans.',
-        author: 'Marc Durand, ÉlectroPro',
+        author: `${clientConfig.FONDATEUR}, ${COMPANY.name}`,
       },
     ],
   },
