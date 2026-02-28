@@ -1,6 +1,7 @@
 import { Accordion } from '@/components/ui/accordion'
 import { FAQ_ITEMS, SERVICE_AREAS } from '@/lib/constants'
 import { MapPin } from 'lucide-react'
+import { clientConfig } from '@/config/client.config'
 
 export function FAQ() {
   const faqSchema = {
@@ -28,7 +29,7 @@ export function FAQ() {
           {/* Left: FAQ */}
           <div>
             <h2 className="mb-8 font-heading text-4xl font-bold text-slate-900 md:text-5xl">
-              Questions <span className="text-electric">frequentes</span>
+              Questions <span className="text-electric">fréquentes</span>
             </h2>
             <Accordion items={FAQ_ITEMS} />
           </div>
@@ -60,11 +61,11 @@ export function FAQ() {
               ))}
             </div>
 
-            {/* Rayon de 50km */}
+            {/* Rayon intervention */}
             <div className="mt-8 rounded-xl border border-electric/20 bg-electric/5 p-4">
               <p className="flex items-center gap-2 text-sm font-medium text-electric">
                 <MapPin className="h-4 w-4" />
-                Rayon de 50 km autour de Paris
+                Rayon de {clientConfig.ZONE_KM} km autour de {clientConfig.VILLE}
               </p>
             </div>
           </div>

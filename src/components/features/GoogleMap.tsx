@@ -1,13 +1,14 @@
 'use client'
 
 import { cn } from '@/lib/utils'
+import { clientConfig } from '@/config/client.config'
 
 interface GoogleMapProps {
   address?: string
   className?: string
 }
 
-export function GoogleMap({ address = '15 Rue Voltaire, 75011 Paris', className }: GoogleMapProps) {
+export function GoogleMap({ address = clientConfig.ADRESSE, className }: GoogleMapProps) {
   const encodedAddress = encodeURIComponent(address)
 
   return (
