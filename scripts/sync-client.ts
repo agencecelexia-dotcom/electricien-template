@@ -9,7 +9,7 @@
  *         npx tsx scripts/sync-client.ts
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'fs'
+import {readFileSync, writeFileSync, mkdirSync, existsSync} from 'fs'
 import { join, dirname } from 'path'
 
 const ROOT = join(__dirname, '..')
@@ -20,6 +20,15 @@ const OUTPUT_CSS = join(ROOT, 'src', 'app', 'globals.css')
 // ---------------------------------------------------------------------------
 // 1. Lire CLIENT.md
 // ---------------------------------------------------------------------------
+
+// Graceful fallback when CLIENT.md not yet available
+if (!existsSync(SOURCE)) {
+  console.warn("CLIENT.md introuvable - generation config par defaut.");
+  writeFileSync(OUTPUT_CONFIG, "// Auto-generated default config (CLIENT.md not yet available)\nexport const clientConfig = {\n  NOM_ENTREPRISE: \"Mon Entreprise\",\n  NOM_DIRIGEANT: \"Nom\",\n  PRENOM_DIRIGEANT: \"Prenom\",\n  GENRE_DIRIGEANT: \"M.\",\n  TELEPHONE: \"00 00 00 00 00\",\n  TELEPHONE_URGENCE: \"00 00 00 00 00\",\n  EMAIL: \"contact@example.com\",\n  ADRESSE: \"1 rue Exemple\",\n  VILLE: \"Paris\",\n  CODE_POSTAL: \"75001\",\n  DEPARTEMENT: \"Paris\",\n  REGION: \"Ile-de-France\",\n  HORAIRES_SEMAINE: \"8h - 18h\",\n  HORAIRES_SAMEDI: \"9h - 12h\",\n  HORAIRES_DIMANCHE: \"Ferme\",\n  HORAIRES_URGENCE: \"24h/24\",\n  ANNEES_EXPERIENCE: \"15\",\n  NOMBRE_INTERVENTIONS: \"500\",\n  TAUX_SATISFACTION: \"98\",\n  ZONE_INTERVENTION: \"Paris et alentours\",\n  ZONE_KM: \"30\",\n  SIRET: \"\",\n  SLOGAN: \"Votre electricien de confiance\",\n  DESCRIPTION_ENTREPRISE: \"Entreprise specialisee en electricite.\",\n  META_TITLE: \"Electricien - Devis Gratuit\",\n  META_DESCRIPTION: \"Entreprise electricite. Devis gratuit.\",\n  ACCROCHE_HERO: \"Votre installation electrique en toute securite\",\n  PRIMARY_HUE: \"220\",\n  ACCENT_HUE: \"45\",\n  SERVICE_1_TITRE: \"Installation electrique\",\n  SERVICE_1_DESC: \"Installation complete neuf et renovation.\",\n  SERVICE_2_TITRE: \"Renovation electrique\",\n  SERVICE_2_DESC: \"Mise aux normes et renovation.\",\n  SERVICE_3_TITRE: \"Depannage urgence\",\n  SERVICE_3_DESC: \"Intervention rapide panne electrique.\",\n  SERVICE_4_TITRE: \"Mise aux normes\",\n  SERVICE_4_DESC: \"Mise en conformite NF C 15-100.\",\n  SERVICE_5_TITRE: \"Domotique\",\n  SERVICE_5_DESC: \"Solutions domotique et maison connectee.\",\n  SERVICE_6_TITRE: \"Eclairage\",\n  SERVICE_6_DESC: \"Eclairage interieur et exterieur LED.\",\n  FACEBOOK_URL: \"\",\n  INSTAGRAM_URL: \"\",\n  GOOGLE_URL: \"\",\n} as const;\nexport type ClientConfig = typeof clientConfig;", 'utf-8');
+  console.log("client.config.ts genere avec valeurs par defaut");
+  process.exit(0);
+}
+
 const raw = readFileSync(SOURCE, 'utf-8')
 const cssContent = readFileSync(OUTPUT_CSS, 'utf-8')
 
